@@ -17,5 +17,5 @@ public partial class CarModel
     public string CarModelName { get; set; } = null!;
 
     [InverseProperty("CarModel")]
-    public virtual ICollection<CarBrandModelId> CarBrandModelIds { get; set; } = new List<CarBrandModelId>();
+    public virtual ICollection<CarBrandModel> CarBrandModels { get; set; } = new List<CarBrandModel>();
 }

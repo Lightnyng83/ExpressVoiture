@@ -9,7 +9,6 @@ namespace ExpressVoitures.Data
         private static readonly IPasswordHasher<IdentityUser> _passwordHasher = new PasswordHasher<IdentityUser>();
         private static readonly string adminEmail = "admin@example.com";
         private static readonly string adminPassword = "Admin@123";
-        private static readonly string adminName = "Jacques";
         public static async void Initialize(IServiceProvider serviceProvider)
         {
             #region ----- INITIALIZATION -----
@@ -53,49 +52,61 @@ namespace ExpressVoitures.Data
 
             #region ----- ADDING CAR DATA -----
 
-            var carBrand = dbContext.CarBrands.FirstOrDefault(x => x.CarBrandName == "Mazda");
-            if (carBrand == null)
+            // Liste des voitures issues du fichier Excel
+            var cars = new List<(string brand, string model, int year, int price)>
+    {
+        ("Mazda", "Miata", 2019, 9900),
+        ("Jeep", "Liberty", 2007, 5350),
+        ("Renault", "Scénic", 2007, 2990),
+        ("Ford", "Explorer", 2017, 25950),
+        ("Honda", "Civic", 2008, 4975)
+    };
+
+            foreach (var (brand, model, year, price) in cars)
             {
-                dbContext.CarBrands.Add(new CarBrand
+                #region ----- {brand} {model} {year} -----
+
+                var carBrand = dbContext.CarBrands.FirstOrDefault(x => x.CarBrandName == brand);
+                if (carBrand == null)
                 {
-                    CarBrandName = "Mazda"
-                });
-                dbContext.SaveChanges();
+                    carBrand = new CarBrand { CarBrandName = brand };
+                    dbContext.CarBrands.Add(carBrand);
+                    dbContext.SaveChanges();
+                }
+
+                var carModel = dbContext.CarModels.FirstOrDefault(x => x.CarModelName == model);
+                if (carModel == null)
+                {
+                    carModel = new CarModel { CarModelName = model };
+                    dbContext.CarModels.Add(carModel);
+                    dbContext.SaveChanges();
+                }
+
+                var carBrandModel = dbContext.CarBrandModels.FirstOrDefault(x => x.CarBrandId == carBrand.CarBrandId && x.CarModelId == carModel.CarModelId);
+                if (carBrandModel == null)
+                {
+                    carBrandModel = new CarBrandModel { CarBrandId = carBrand.CarBrandId, CarModelId = carModel.CarModelId };
+                    dbContext.CarBrandModels.Add(carBrandModel);
+                    dbContext.SaveChanges();
+                }
+
+                var car = dbContext.Cars.FirstOrDefault(x => x.CarBrandModelId == carBrandModel.CarBrandModelId && x.Year == year);
+                if (car == null)
+                {
+                    dbContext.Cars.Add(new Car
+                    {
+                        CarBrandModelId = carBrandModel.CarBrandModelId,
+                        Year = year,
+                        SellingPrice = price,
+                    });
+                    dbContext.SaveChanges();
+                }
+
+                #endregion
             }
 
-            var carModel = dbContext.CarModels.FirstOrDefault(x => x.CarModelName == "Miata");
-            if (carModel == null)
-            {
-                dbContext.CarModels.Add(new CarModel
-                {
-                    CarModelName = "Miata"
-                });
-                dbContext.SaveChanges();
-            }
-            carBrand = dbContext.CarBrands.FirstOrDefault(x => x.CarBrandName == "Mazda");
-            carModel = dbContext.CarModels.FirstOrDefault(x => x.CarModelName == "Miata");
-            var carBrandModel = dbContext.CarBrandModelIds.FirstOrDefault(x => x.CarBrandId == carBrand.CarBrandId && x.CarModelId == carModel.CarModelId);
-            if (carBrandModel == null)
-            {
-                dbContext.CarBrandModelIds.Add(new CarBrandModelId
-                {
-                    CarBrandId = carBrand.CarBrandId,
-                    CarModelId = carModel.CarModelId
-                });
-                dbContext.SaveChanges();
-            }
-
-            var car = dbContext.Cars.FirstOrDefault(x => x.CarBrandModelId == carBrandModel.CarBrandModelId1);
-            if (car == null) {
-                dbContext.Cars.Add(new Car
-                {
-                    CarBrandModelId = carBrandModel.CarBrandModelId1,
-                    Year = 2019,
-                    SellingPrice = 9900,
-                });
-                dbContext.SaveChanges();
-            }
-            #endregion
+            #endregion ----- ADDING CAR DATA -----
         }
+
     }
 }

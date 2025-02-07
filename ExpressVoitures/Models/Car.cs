@@ -23,5 +23,5 @@ public partial class Car
 
     [ForeignKey("CarBrandModelId")]
     [InverseProperty("Cars")]
-    public virtual CarBrandModelId CarBrandModel { get; set; } = null!;
+    public virtual CarBrandModel CarBrandModel { get; set; } = null!;
 }

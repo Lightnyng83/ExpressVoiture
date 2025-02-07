@@ -20,7 +20,7 @@ namespace ExpressVoitures.Data
 
         public virtual DbSet<CarBrand> CarBrands { get; set; }
 
-        public virtual DbSet<CarBrandModelId> CarBrandModelIds { get; set; }
+        public virtual DbSet<CarBrandModel> CarBrandModels { get; set; }
 
         public virtual DbSet<CarModel> CarModels { get; set; }
 
@@ -42,15 +42,15 @@ namespace ExpressVoitures.Data
                     .HasConstraintName("FK_Car_CarBrandModelId");
             });
 
-            modelBuilder.Entity<CarBrandModelId>(entity =>
+            modelBuilder.Entity<CarBrandModel>(entity =>
             {
-                entity.HasKey(e => e.CarBrandModelId1).HasName("PK_CarBrandModelId_1");
+                entity.HasKey(e => e.CarBrandModelId).HasName("PK_CarBrandModelId_1");
 
-                entity.HasOne(d => d.CarBrand).WithMany(p => p.CarBrandModelIds)
+                entity.HasOne(d => d.CarBrand).WithMany(p => p.CarBrandModels)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_CarBrandModelId_CarBrand1");
 
-                entity.HasOne(d => d.CarModel).WithMany(p => p.CarBrandModelIds)
+                entity.HasOne(d => d.CarModel).WithMany(p => p.CarBrandModels)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_CarBrandModelId_CarModel1");
             });
