@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpressVoitures", "ExpressVoitures\ExpressVoitures.csproj", "{4217A46E-2D8A-445E-8890-CA67042DD6CF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpressVoitures", "ExpressVoitures.csproj", "{64C94D4E-FA0B-49F4-9F98-390DDF95F182}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4217A46E-2D8A-445E-8890-CA67042DD6CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4217A46E-2D8A-445E-8890-CA67042DD6CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4217A46E-2D8A-445E-8890-CA67042DD6CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4217A46E-2D8A-445E-8890-CA67042DD6CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64C94D4E-FA0B-49F4-9F98-390DDF95F182}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64C94D4E-FA0B-49F4-9F98-390DDF95F182}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64C94D4E-FA0B-49F4-9F98-390DDF95F182}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64C94D4E-FA0B-49F4-9F98-390DDF95F182}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

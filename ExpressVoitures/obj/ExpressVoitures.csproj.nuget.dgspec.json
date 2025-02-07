@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\ExpressVoiture\\ExpressVoitures\\ExpressVoitures\\ExpressVoitures.csproj": {}
+    "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\ExpressVoiture\\ExpressVoitures\\ExpressVoitures.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\ExpressVoiture\\ExpressVoitures\\ExpressVoitures\\ExpressVoitures.csproj": {
+    "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\ExpressVoiture\\ExpressVoitures\\ExpressVoitures.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\ExpressVoiture\\ExpressVoitures\\ExpressVoitures\\ExpressVoitures.csproj",
+        "projectUniqueName": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\ExpressVoiture\\ExpressVoitures\\ExpressVoitures.csproj",
         "projectName": "ExpressVoitures",
-        "projectPath": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\ExpressVoiture\\ExpressVoitures\\ExpressVoitures\\ExpressVoitures.csproj",
+        "projectPath": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\ExpressVoiture\\ExpressVoitures\\ExpressVoitures.csproj",
         "packagesPath": "C:\\Users\\Lightnyng83\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\ExpressVoiture\\ExpressVoitures\\ExpressVoitures\\obj\\",
+        "outputPath": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\ExpressVoiture\\ExpressVoitures\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
