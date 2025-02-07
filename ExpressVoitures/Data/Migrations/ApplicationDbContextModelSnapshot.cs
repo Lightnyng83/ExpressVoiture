@@ -58,7 +58,7 @@ namespace ExpressVoitures.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CarBrandId"));
 
-                    b.Property<string>("CarBrand1")
+                    b.Property<string>("CarBrandName")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)")
@@ -102,7 +102,7 @@ namespace ExpressVoitures.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CarModelId"));
 
-                    b.Property<string>("CarModel1")
+                    b.Property<string>("CarModelName")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)")
