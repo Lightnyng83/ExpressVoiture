@@ -1,0 +1,37 @@
+﻿@model IEnumerable<ExpressVoitures.Models.Car>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <h1 class="page-title">Nos voitures</h1>
+    @if (User.IsInRole("ADMIN"))
+    {
+        
+            <a href="/Car/Create" class="add-car-button">Ajouter une voiture</a>
+        
+    }
+
+    <div class="cars-grid">
+        @foreach (var item in Model)
+        {
+            <a href="/Car/Details/@item.CarId">
+        <div class="car-card">
+            
+            <img src="/images/@item.ImageUrl" alt="Voiture" class="car-image">
+            <div class="car-details">
+                <p class="price-title">@item.SellingPrice €</p>
+                    <p class="car-info">@item.Year</p>
+                    <p class="car-info">@item.CarBrandModel.CarBrand.CarBrandName</p>
+                    <p class="car-info">@item.CarBrandModel.CarModel.CarModelName</p>
+                    <p class="car-info">@item.Finition</p>
+                    </div>
+        </div>
+            </a>
+
+        }
+        </div>
+</div>
+
+

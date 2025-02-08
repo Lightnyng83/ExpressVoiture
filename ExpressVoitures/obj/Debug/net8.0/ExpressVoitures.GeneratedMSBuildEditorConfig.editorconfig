@@ -1,11 +1,19 @@
 is_global = true
 build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
 build_property.PlatformNeutralAssembly = 
 build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ExpressVoitures
 build_property.RootNamespace = ExpressVoitures
@@ -22,6 +30,26 @@ build_property.EnableCodeStyleSeverity =
 
 [C:/Users/Lightnyng83/Desktop/OpenClassrooms/ExpressVoiture/ExpressVoitures/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lightnyng83/Desktop/OpenClassrooms/ExpressVoiture/ExpressVoitures/Views/Car/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lightnyng83/Desktop/OpenClassrooms/ExpressVoiture/ExpressVoitures/Views/Car/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lightnyng83/Desktop/OpenClassrooms/ExpressVoiture/ExpressVoitures/Views/Car/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lightnyng83/Desktop/OpenClassrooms/ExpressVoiture/ExpressVoitures/Views/Car/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lightnyng83/Desktop/OpenClassrooms/ExpressVoiture/ExpressVoitures/Views/Car/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Lightnyng83/Desktop/OpenClassrooms/ExpressVoiture/ExpressVoitures/Views/Home/Index.cshtml]

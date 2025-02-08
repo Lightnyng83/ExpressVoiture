@@ -33,12 +33,20 @@ namespace ExpressVoitures.Data.Migrations
                     b.Property<int>("CarBrandModelId")
                         .HasColumnType("int");
 
+                    b.Property<string>("Finition")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ImageUrl")
                         .HasMaxLength(350)
                         .HasColumnType("nvarchar(350)");
 
                     b.Property<int>("SellingPrice")
                         .HasColumnType("int");
+
+                    b.Property<string>("VinCode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Year")
                         .HasColumnType("int");
@@ -58,7 +66,7 @@ namespace ExpressVoitures.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CarBrandId"));
 
-                    b.Property<string>("CarBrand1")
+                    b.Property<string>("CarBrandName")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)")
@@ -69,14 +77,14 @@ namespace ExpressVoitures.Data.Migrations
                     b.ToTable("CarBrand");
                 });
 
-            modelBuilder.Entity("ExpressVoitures.Models.CarBrandModelId", b =>
+            modelBuilder.Entity("ExpressVoitures.Models.CarBrandModel", b =>
                 {
-                    b.Property<int>("CarBrandModelId1")
+                    b.Property<int>("CarBrandModelId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("CarBrandModelId");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CarBrandModelId1"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CarBrandModelId"));
 
                     b.Property<int>("CarBrandId")
                         .HasColumnType("int");
@@ -84,14 +92,14 @@ namespace ExpressVoitures.Data.Migrations
                     b.Property<int>("CarModelId")
                         .HasColumnType("int");
 
-                    b.HasKey("CarBrandModelId1")
+                    b.HasKey("CarBrandModelId")
                         .HasName("PK_CarBrandModelId_1");
 
                     b.HasIndex("CarBrandId");
 
                     b.HasIndex("CarModelId");
 
-                    b.ToTable("CarBrandModelId");
+                    b.ToTable("CarBrandModel");
                 });
 
             modelBuilder.Entity("ExpressVoitures.Models.CarModel", b =>
@@ -102,7 +110,7 @@ namespace ExpressVoitures.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CarModelId"));
 
-                    b.Property<string>("CarModel1")
+                    b.Property<string>("CarModelName")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)")
@@ -317,7 +325,7 @@ namespace ExpressVoitures.Data.Migrations
 
             modelBuilder.Entity("ExpressVoitures.Models.Car", b =>
                 {
-                    b.HasOne("ExpressVoitures.Models.CarBrandModelId", "CarBrandModel")
+                    b.HasOne("ExpressVoitures.Models.CarBrandModel", "CarBrandModel")
                         .WithMany("Cars")
                         .HasForeignKey("CarBrandModelId")
                         .IsRequired()
@@ -326,16 +334,16 @@ namespace ExpressVoitures.Data.Migrations
                     b.Navigation("CarBrandModel");
                 });
 
-            modelBuilder.Entity("ExpressVoitures.Models.CarBrandModelId", b =>
+            modelBuilder.Entity("ExpressVoitures.Models.CarBrandModel", b =>
                 {
                     b.HasOne("ExpressVoitures.Models.CarBrand", "CarBrand")
-                        .WithMany("CarBrandModelIds")
+                        .WithMany("CarBrandModels")
                         .HasForeignKey("CarBrandId")
                         .IsRequired()
                         .HasConstraintName("FK_CarBrandModelId_CarBrand1");
 
                     b.HasOne("ExpressVoitures.Models.CarModel", "CarModel")
-                        .WithMany("CarBrandModelIds")
+                        .WithMany("CarBrandModels")
                         .HasForeignKey("CarModelId")
                         .IsRequired()
                         .HasConstraintName("FK_CarBrandModelId_CarModel1");
@@ -398,17 +406,17 @@ namespace ExpressVoitures.Data.Migrations
 
             modelBuilder.Entity("ExpressVoitures.Models.CarBrand", b =>
                 {
-                    b.Navigation("CarBrandModelIds");
+                    b.Navigation("CarBrandModels");
                 });
 
-            modelBuilder.Entity("ExpressVoitures.Models.CarBrandModelId", b =>
+            modelBuilder.Entity("ExpressVoitures.Models.CarBrandModel", b =>
                 {
                     b.Navigation("Cars");
                 });
 
             modelBuilder.Entity("ExpressVoitures.Models.CarModel", b =>
                 {
-                    b.Navigation("CarBrandModelIds");
+                    b.Navigation("CarBrandModels");
                 });
 #pragma warning restore 612, 618
         }

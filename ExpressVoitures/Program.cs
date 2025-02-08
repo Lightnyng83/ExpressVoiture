@@ -1,4 +1,8 @@
 using ExpressVoitures.Data;
+using ExpressVoitures.Repository;
+using ExpressVoitures.Repository.Interfaces;
+using ExpressVoitures.Services;
+using ExpressVoitures.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,9 +14,19 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<ApplicationDbContext>();
+builder.Services.AddDefaultIdentity<IdentityUser>(options =>
+{
+    options.SignIn.RequireConfirmedAccount = true;
+})
+.AddRoles<IdentityRole>()
+.AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped<ICarRepository, CarRepository>();
+builder.Services.AddScoped<ICarService, CarService>();
+
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
 
 var app = builder.Build();
 
@@ -39,5 +53,12 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 app.MapRazorPages();
+
+#region ----- INITIALIZATION -----
+
+SeedData.Initialize(app.Services);
+
+#endregion ----- INITIALIZATION -----
+
 
 app.Run();

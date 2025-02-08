@@ -1,0 +1,61 @@
+﻿/*---------------------------Detail--------------------*/
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.back-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #666;
+    text-decoration: none;
+    margin-bottom: 30px;
+}
+
+.back-arrow::before {
+    content: "←";
+    margin-right: 5px;
+}
+
+.car-detail {
+    display: flex;
+    gap: 40px;
+}
+
+.car-image {
+    width: 600px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.car-info {
+    padding: 20px 0;
+}
+
+.edit-notice {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.edit-link {
+    color: red;
+    text-decoration: none;
+}
+
+    .edit-link:hover {
+        text-decoration: underline;
+    }
+
+.price-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.info-row {
+    margin: 15px 0;
+    color: #333;
+}

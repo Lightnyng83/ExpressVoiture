@@ -1,0 +1,38 @@
+﻿@model ExpressVoitures.Models.Car
+
+@{
+    ViewData["Title"] = "Details";
+}
+<link rel="stylesheet" href="~/css/Detail.css" />
+<div class="container">
+    <a href="#" class="back-link">
+        <span class="back-arrow">Retour</span>
+    </a>
+
+    <div class="car-detail">
+        <img src="~/images/@Model.ImageUrl" alt="Voiture" class="car-image">
+
+        <div class="car-info">
+            @if(User.IsInRole("ADMIN"))
+            {
+                <p class="edit-notice">
+                    Vous avez publié cette annonce, vous pouvez la<br />
+                    <a asp-action="Edit" asp-route-id="@Model?.CarId" style="text-decoration:underline">modifier</a>
+
+                    ou la <a asp-action="Delete" asp-route-id="@Model?.CarId" style="color:red;text-decoration:underline">supprimer</a>
+
+                </p>
+            }
+            
+
+            <h2 class="price-title">@Model.SellingPrice</h2>
+
+            <div class="info-list">
+                <p class="info-row">@Model.Year</p>
+                <p class="info-row">@Model.CarBrandModel.CarBrand.CarBrandName</p>
+                <p class="info-row">@Model.CarBrandModel.CarModel.CarModelName</p>
+                <p class="info-row">@Model.Finition</p>
+            </div>
+        </div>
+    </div>
+</div>
