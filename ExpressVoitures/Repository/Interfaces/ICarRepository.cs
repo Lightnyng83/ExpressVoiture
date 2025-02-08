@@ -4,18 +4,19 @@ namespace ExpressVoitures.Repository.Interfaces
 {
     public interface ICarRepository
     {
-        void AddCar(Car car);
-        void DeleteCar(int carId);
-        IEnumerable<Car> GetAllCars();
-        Car GetCarById(int carId);
-        void UpdateCar(Car car);
-        void AddBrand(CarBrand brand);
-        void AddModel(CarModel model);
-        void AddBrandModel(CarBrandModel brandModel);
-        CarBrandModel GetBrandModelId(int brandId, int modelId);
-        CarBrand GetBrandByName(string brandName);
-        CarModel GetModelByName(string modelName);
-
+        Task AddCar(Car car);
+        Task DeleteCar(int carId);
+        Task UpdateCar(Car car);
+        Task<List<Car>> GetAllCars();
+        Task<Car?> GetCarById(int? carId);
+        Task<CarBrand?> GetBrandByName(string brandName);
+        Task<CarModel?> GetModelByName(string modelName);
+        Task<CarBrandModel?> GetBrandModelId(int brandId, int modelId);
+        Task AddBrand(CarBrand brand);
+        Task AddModel(CarModel model);
+        Task AddBrandModel(CarBrandModel brandModel);
+        Task<List<CarBrand>> GetBrand();
+        Task<List<CarModel>> GetModel();
 
 
     }

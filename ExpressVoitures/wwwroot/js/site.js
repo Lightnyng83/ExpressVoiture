@@ -1,4 +1,16 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿
+$(document).ready(function() {
+    $("#SelectedBrand").select2({
+        placeholder: "Sélectionnez une marque ou tapez en une nouvelle",
+        tags: true, // Autorise la saisie libre d'une valeur non existante
+        tokenSeparators: [',', ' ']
+    });
+});
 
-// Write your JavaScript code.
+$(document).ready(function() {
+    $("#SelectedModel").select2({
+        placeholder: "Sélectionnez un modèle ou tapez en un nouveau",
+        tags: true, // Autorise la saisie libre
+        tokenSeparators: [',', ' ']
+    });
+});

@@ -64,7 +64,6 @@ namespace ExpressVoitures.Data
 
             foreach (var (brand, model, year, price) in cars)
             {
-                #region ----- {brand} {model} {year} -----
 
                 var carBrand = dbContext.CarBrands.FirstOrDefault(x => x.CarBrandName == brand);
                 if (carBrand == null)
@@ -98,11 +97,11 @@ namespace ExpressVoitures.Data
                         CarBrandModelId = carBrandModel.CarBrandModelId,
                         Year = year,
                         SellingPrice = price,
+                        ImageUrl = "default.jpg"
                     });
                     dbContext.SaveChanges();
                 }
 
-                #endregion
             }
 
             #endregion ----- ADDING CAR DATA -----

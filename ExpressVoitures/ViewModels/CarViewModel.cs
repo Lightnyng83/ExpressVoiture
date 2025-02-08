@@ -1,12 +1,17 @@
-﻿namespace ExpressVoitures.ViewModels
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+
+namespace ExpressVoitures.ViewModels
 {
     public class CarViewModel
     {
-        public required string Brand { get; set; }
-        public required string Model { get; set; }
-        public required int Year { get; set; }
-        public string ImageUrl { get; set; }
-        public required int SellingPrice { get; set; }
+        public string? Brand { get; set; }
+        public string? Model { get; set; }
+        public int Year { get; set; }
+        public IFormFile? Image { get; set; }
+        public int SellingPrice { get; set; }
+        // Propriétés pour alimenter les listes déroulantes
+        public int SelectedCarBrandId { get; set; }
+        public int SelectedCarBrandModelId { get; set; }
 
     }
 }

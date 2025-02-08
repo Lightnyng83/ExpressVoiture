@@ -30,6 +30,7 @@ namespace ExpressVoitures.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            
 
             modelBuilder.Entity<IdentityUserLogin<string>>().HasKey(l => new { l.LoginProvider, l.ProviderKey });
             modelBuilder.Entity<IdentityUserRole<string>>().HasKey(r => new { r.UserId, r.RoleId });
@@ -53,6 +54,7 @@ namespace ExpressVoitures.Data
                 entity.HasOne(d => d.CarModel).WithMany(p => p.CarBrandModels)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_CarBrandModelId_CarModel1");
+                
             });
 
             OnModelCreatingPartial(modelBuilder);
