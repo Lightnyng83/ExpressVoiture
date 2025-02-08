@@ -4,56 +4,34 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<div class="container">
+    <h1 class="page-title">Nos voitures</h1>
+    @if (User.IsInRole("ADMIN"))
+    {
+        
+            <a href="/Car/Create" class="add-car-button">Ajouter une voiture</a>
+        
+    }
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Year)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImageUrl)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SellingPrice)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CarBrandModel)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CarBrandModel)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Year)
-            </td>
-            <td>
-                    <img src="~/images/@Html.DisplayFor(modelItem => item.ImageUrl)" style="width:150px; height:auto" />
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SellingPrice)
-            </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CarBrandModel.CarBrand.CarBrandName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CarBrandModel.CarModel.CarModelName)
-                </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.CarId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.CarId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.CarId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    <div class="cars-grid">
+        @foreach (var item in Model)
+        {
+            <a href="/Car/Details/@item.CarId">
+        <div class="car-card">
+            
+            <img src="/images/@item.ImageUrl" alt="Voiture" class="car-image">
+            <div class="car-details">
+                <p class="price-title">@item.SellingPrice €</p>
+                    <p class="car-info">@item.Year</p>
+                    <p class="car-info">@item.CarBrandModel.CarBrand.CarBrandName</p>
+                    <p class="car-info">@item.CarBrandModel.CarModel.CarModelName</p>
+                    <p class="car-info">@item.Finition</p>
+                    </div>
+        </div>
+            </a>
+
+        }
+        </div>
+</div>
+
+

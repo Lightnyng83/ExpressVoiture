@@ -20,9 +20,22 @@ namespace ExpressVoitures.Data
 
             #region ----- ADDING USERS -----
 
+            // Récupérer les services UserManager et RoleManager
             var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
+            var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
 
-
+            // Vérifier si le rôle "Admin" existe, sinon le créer
+            if (!await roleManager.RoleExistsAsync("Admin"))
+            {
+                var roleResult = await roleManager.CreateAsync(new IdentityRole("ADMIN"));
+                if (!roleResult.Succeeded)
+                {
+                    foreach (var error in roleResult.Errors)
+                    {
+                        Console.WriteLine($"Error creating Admin role: {error.Description}");
+                    }
+                }
+            }
 
             if (await userManager.FindByEmailAsync("admin@example.com") == null)
             {
@@ -37,7 +50,19 @@ namespace ExpressVoitures.Data
 
                 if (result.Succeeded)
                 {
-                    Console.WriteLine("Admin user created successfully.");
+                    // Ajout de l'utilisateur au rôle "Admin"
+                    var addToRoleResult = await userManager.AddToRoleAsync(user, "Admin");
+                    if (addToRoleResult.Succeeded)
+                    {
+                        Console.WriteLine("Admin user created successfully and added to Admin role.");
+                    }
+                    else
+                    {
+                        foreach (var error in addToRoleResult.Errors)
+                        {
+                            Console.WriteLine($"Error adding user to Admin role: {error.Description}");
+                        }
+                    }
                 }
                 else
                 {
@@ -53,16 +78,18 @@ namespace ExpressVoitures.Data
             #region ----- ADDING CAR DATA -----
 
             // Liste des voitures issues du fichier Excel
-            var cars = new List<(string brand, string model, int year, int price)>
+            var cars = new List<(string brand, string model, int year, int price,string finition)>
     {
-        ("Mazda", "Miata", 2019, 9900),
-        ("Jeep", "Liberty", 2007, 5350),
-        ("Renault", "Scénic", 2007, 2990),
-        ("Ford", "Explorer", 2017, 25950),
-        ("Honda", "Civic", 2008, 4975)
+        ("Mazda", "Miata", 2019, 9900,"LE"),
+        ("Jeep", "Liberty", 2007, 5350,"Sport"),
+        ("Renault", "Scénic", 2007, 2990,"TCe"),
+        ("Ford", "Explorer", 2017, 25950,"XLT"),
+        ("Honda", "Civic", 2008, 4975,"LX"),
+        ("Volkswagen", "GTI", 2016, 16190, "S"),
+        ("Ford", "Edge", 2013, 12440, "SEL")
     };
 
-            foreach (var (brand, model, year, price) in cars)
+            foreach (var (brand, model, year, price, finition) in cars)
             {
 
                 var carBrand = dbContext.CarBrands.FirstOrDefault(x => x.CarBrandName == brand);
@@ -97,7 +124,8 @@ namespace ExpressVoitures.Data
                         CarBrandModelId = carBrandModel.CarBrandModelId,
                         Year = year,
                         SellingPrice = price,
-                        ImageUrl = "default.jpg"
+                        ImageUrl = "default.jpg",
+                        Finition = finition,
                     });
                     dbContext.SaveChanges();
                 }

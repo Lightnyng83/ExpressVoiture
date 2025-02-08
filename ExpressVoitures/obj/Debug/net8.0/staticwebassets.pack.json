@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\ExpressVoitures.kundwv9oji.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\ExpressVoiture\\ExpressVoitures\\wwwroot\\css\\Create.css",
+      "PackagePath": "staticwebassets\\css\\Create.css"
+    },
+    {
+      "Id": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\ExpressVoiture\\ExpressVoitures\\wwwroot\\css\\Detail.css",
+      "PackagePath": "staticwebassets\\css\\Detail.css"
+    },
+    {
       "Id": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\ExpressVoiture\\ExpressVoitures\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

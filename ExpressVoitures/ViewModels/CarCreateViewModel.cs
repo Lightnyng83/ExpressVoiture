@@ -17,7 +17,7 @@ namespace ExpressVoitures.ViewModels
 
         [Required]
         public int SellingPrice { get; set; }
-
+        public string Finition { get; set; }
         public IFormFile Image { get; set; }
         public string? Brand { get; set; }
         public string? Model { get; set; }

@@ -3,40 +3,36 @@
 @{
     ViewData["Title"] = "Details";
 }
+<link rel="stylesheet" href="~/css/Detail.css" />
+<div class="container">
+    <a href="#" class="back-link">
+        <span class="back-arrow">Retour</span>
+    </a>
 
-<h1>Details</h1>
+    <div class="car-detail">
+        <img src="~/images/@Model.ImageUrl" alt="Voiture" class="car-image">
 
-<div>
-    <h4>Car</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Year)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Year)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ImageUrl)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ImageUrl)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SellingPrice)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SellingPrice)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CarBrandModel)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CarBrandModel.CarBrandModelId)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.CarId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+        <div class="car-info">
+            @if(User.IsInRole("ADMIN"))
+            {
+                <p class="edit-notice">
+                    Vous avez publié cette annonce, vous pouvez la<br />
+                    <a asp-action="Edit" asp-route-id="@Model?.CarId" style="text-decoration:underline">modifier</a>
+
+                    ou la <a asp-action="Delete" asp-route-id="@Model?.CarId" style="color:red;text-decoration:underline">supprimer</a>
+
+                </p>
+            }
+            
+
+            <h2 class="price-title">@Model.SellingPrice</h2>
+
+            <div class="info-list">
+                <p class="info-row">@Model.Year</p>
+                <p class="info-row">@Model.CarBrandModel.CarBrand.CarBrandName</p>
+                <p class="info-row">@Model.CarBrandModel.CarModel.CarModelName</p>
+                <p class="info-row">@Model.Finition</p>
+            </div>
+        </div>
+    </div>
 </div>

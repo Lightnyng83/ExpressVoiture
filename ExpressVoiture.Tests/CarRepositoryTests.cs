@@ -129,7 +129,8 @@ namespace ExpressVoitures.Tests
                 Year = 2019,
                 SellingPrice = 12000,
                 ImageUrl = "delete.png",
-                CarBrandModel = brandModel
+                CarBrandModel = brandModel,
+                Finition = "Finition"
             };
             context.Cars.Add(car);
             context.SaveChanges();
@@ -173,7 +174,8 @@ namespace ExpressVoitures.Tests
                 Year = 2018,
                 SellingPrice = 10000,
                 ImageUrl = "car1.png",
-                CarBrandModel = brandModel
+                CarBrandModel = brandModel,
+                Finition = "Finition"
             };
             var car2 = new Car
             {
@@ -182,7 +184,8 @@ namespace ExpressVoitures.Tests
                 Year = 2020,
                 SellingPrice = 20000,
                 ImageUrl = "car2.png",
-                CarBrandModel = brandModel
+                CarBrandModel = brandModel,
+                Finition = "Finition"
             };
             context.Cars.AddRange(car1, car2);
             context.SaveChanges();
@@ -297,7 +300,8 @@ namespace ExpressVoitures.Tests
                 Year = 2021,
                 SellingPrice = 18000,
                 ImageUrl = "getcar.png",
-                CarBrandModel = brandModel
+                CarBrandModel = brandModel,
+                Finition = "Finition"
             };
             context.Cars.Add(car);
             context.SaveChanges();
@@ -356,7 +360,8 @@ namespace ExpressVoitures.Tests
                 Year = 2017,
                 SellingPrice = 11000,
                 ImageUrl = "old.png",
-                CarBrandModel = brandModel
+                CarBrandModel = brandModel,
+                Finition = "Finition"
             };
             context.Cars.Add(car);
             context.SaveChanges();

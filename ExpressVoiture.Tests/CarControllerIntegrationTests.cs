@@ -93,7 +93,9 @@ namespace ExpressVoitures.IntegrationTests
                 Year = year,
                 SellingPrice = price,
                 ImageUrl = imageUrl,
-                CarBrandModel = brandModel
+                CarBrandModel = brandModel,
+                Finition = "LX"
+
             };
 
             _context.Cars.Add(car);
@@ -191,7 +193,8 @@ namespace ExpressVoitures.IntegrationTests
                 Model = "Corolla",
                 Year = 2020,
                 SellingPrice = 15000,
-                Image = null // Pas de fichier image pour ce test.
+                Image = null,// Pas de fichier image pour ce test.
+                Finition = "LX"
             };
 
             // Act

@@ -15,7 +15,7 @@ namespace ExpressVoitures.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index", "Car");
         }
 
         public IActionResult Privacy()

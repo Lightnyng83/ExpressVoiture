@@ -114,7 +114,8 @@ namespace ExpressVoitures.Views.Admin
                     CarBrandModelId = brandModel != null ? brandModel.CarBrandModelId : _carService.GetBrandModelId(_carService.GetBrandByName(carViewModel.Brand).Result.CarBrandId, _carService.GetModelByName(carViewModel.Model).Result.CarModelId).Result.CarBrandModelId,
                     Year = carViewModel.Year,
                     SellingPrice = carViewModel.SellingPrice,
-                    ImageUrl = uniqueFileName // Par exemple "GUID_NomFichier.ext"
+                    ImageUrl = uniqueFileName, // Par exemple "GUID_NomFichier.ext"
+                    Finition = carViewModel.Finition
                 };
                 await _carService.AddCar(newcar);                    
                 

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "efcmpTZ50p2iJcUOg3toct8zlinHq8OGFD3IvlFTpvg=",
+  "Hash": "KOrEZWvhkOgLsYvlx68VaAzX/Ic+kKxmUTa2rLptGLo=",
   "Source": "ExpressVoitures",
   "BasePath": "_content/ExpressVoitures",
   "Mode": "Default",
@@ -1319,6 +1319,48 @@
       "OriginalItemSpec": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\ExpressVoiture\\ExpressVoitures\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ExpressVoitures.bundle.scp.css"
     },
     {
+      "Identity": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\ExpressVoiture\\ExpressVoitures\\wwwroot\\css\\Create.css",
+      "SourceId": "ExpressVoitures",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\ExpressVoiture\\ExpressVoitures\\wwwroot\\",
+      "BasePath": "_content/ExpressVoitures",
+      "RelativePath": "css/Create#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "zrnn26ll2m",
+      "Integrity": "4X0KtOGjF3OX2gv0pdTtr9tU54Npay1W1Mtrs+9Dtsg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Create.css"
+    },
+    {
+      "Identity": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\ExpressVoiture\\ExpressVoitures\\wwwroot\\css\\Detail.css",
+      "SourceId": "ExpressVoitures",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\ExpressVoiture\\ExpressVoitures\\wwwroot\\",
+      "BasePath": "_content/ExpressVoitures",
+      "RelativePath": "css/Detail#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "4jgcgqrom3",
+      "Integrity": "ULl5WAD5P0bvXDTfEsbL/7SncbHaYUOw50yQWREwjzY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Detail.css"
+    },
+    {
       "Identity": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\ExpressVoiture\\ExpressVoitures\\wwwroot\\css\\site.css",
       "SourceId": "ExpressVoitures",
       "SourceType": "Discovered",
@@ -1333,8 +1375,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "c2tiyv64ts",
-      "Integrity": "pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0=",
+      "Fingerprint": "x50l1yhw6q",
+      "Integrity": "FW1YS3hepKAwsdD2NPRjWgJi7uVEQ+UQbG8C0jW80tQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -2602,8 +2644,8 @@
   ],
   "Endpoints": [
     {
-      "Route": "css/site.c2tiyv64ts.css",
-      "AssetFile": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\ExpressVoiture\\ExpressVoitures\\wwwroot\\css\\site.css",
+      "Route": "css/Create.css",
+      "AssetFile": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\ExpressVoiture\\ExpressVoitures\\wwwroot\\css\\Create.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2612,7 +2654,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "362"
+          "Value": "1263"
         },
         {
           "Name": "Content-Type",
@@ -2620,11 +2662,48 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0=\""
+          "Value": "\"4X0KtOGjF3OX2gv0pdTtr9tU54Npay1W1Mtrs+9Dtsg=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 07 Feb 2025 11:41:21 GMT"
+          "Value": "Sat, 08 Feb 2025 19:27:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-4X0KtOGjF3OX2gv0pdTtr9tU54Npay1W1Mtrs+9Dtsg="
+        }
+      ]
+    },
+    {
+      "Route": "css/Create.zrnn26ll2m.css",
+      "AssetFile": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\ExpressVoiture\\ExpressVoitures\\wwwroot\\css\\Create.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1263"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4X0KtOGjF3OX2gv0pdTtr9tU54Npay1W1Mtrs+9Dtsg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 08 Feb 2025 19:27:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2634,15 +2713,97 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "c2tiyv64ts"
+          "Value": "zrnn26ll2m"
         },
         {
           "Name": "label",
-          "Value": "css/site.css"
+          "Value": "css/Create.css"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0="
+          "Value": "sha256-4X0KtOGjF3OX2gv0pdTtr9tU54Npay1W1Mtrs+9Dtsg="
+        }
+      ]
+    },
+    {
+      "Route": "css/Detail.4jgcgqrom3.css",
+      "AssetFile": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\ExpressVoiture\\ExpressVoitures\\wwwroot\\css\\Detail.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "923"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ULl5WAD5P0bvXDTfEsbL/7SncbHaYUOw50yQWREwjzY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 08 Feb 2025 18:56:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "4jgcgqrom3"
+        },
+        {
+          "Name": "label",
+          "Value": "css/Detail.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ULl5WAD5P0bvXDTfEsbL/7SncbHaYUOw50yQWREwjzY="
+        }
+      ]
+    },
+    {
+      "Route": "css/Detail.css",
+      "AssetFile": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\ExpressVoiture\\ExpressVoitures\\wwwroot\\css\\Detail.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "923"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ULl5WAD5P0bvXDTfEsbL/7SncbHaYUOw50yQWREwjzY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 08 Feb 2025 18:56:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ULl5WAD5P0bvXDTfEsbL/7SncbHaYUOw50yQWREwjzY="
         }
       ]
     },
@@ -2657,7 +2818,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "362"
+          "Value": "1981"
         },
         {
           "Name": "Content-Type",
@@ -2665,11 +2826,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0=\""
+          "Value": "\"FW1YS3hepKAwsdD2NPRjWgJi7uVEQ+UQbG8C0jW80tQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 07 Feb 2025 11:41:21 GMT"
+          "Value": "Sat, 08 Feb 2025 19:28:05 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2679,7 +2840,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0="
+          "Value": "sha256-FW1YS3hepKAwsdD2NPRjWgJi7uVEQ+UQbG8C0jW80tQ="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.x50l1yhw6q.css",
+      "AssetFile": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\ExpressVoiture\\ExpressVoitures\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1981"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"FW1YS3hepKAwsdD2NPRjWgJi7uVEQ+UQbG8C0jW80tQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 08 Feb 2025 19:28:05 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "x50l1yhw6q"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-FW1YS3hepKAwsdD2NPRjWgJi7uVEQ+UQbG8C0jW80tQ="
         }
       ]
     },
