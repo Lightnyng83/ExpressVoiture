@@ -202,7 +202,7 @@ namespace ExpressVoitures.IntegrationTests
 
             // Assert
             var redirectResult = Assert.IsType<RedirectToActionResult>(result);
-            Assert.Equal("Index", redirectResult.ActionName);
+            Assert.Equal("Completed", redirectResult.ActionName);
 
             // Vérifier qu'une voiture a bien été insérée en base
             var carInDb = await _context.Cars.FirstOrDefaultAsync();
@@ -235,7 +235,7 @@ namespace ExpressVoitures.IntegrationTests
 
             // Assert
             var viewResult = Assert.IsType<ViewResult>(result);
-            var viewModel = Assert.IsType<CarEditViewModel>(viewResult.Model);
+            var viewModel = Assert.IsType<CarEditionViewModel>(viewResult.Model);
             Assert.Equal(2020, viewModel.Year);
             Assert.Equal("Toyota", viewModel.Brand);
             Assert.Equal("Corolla", viewModel.Model);
@@ -253,7 +253,8 @@ namespace ExpressVoitures.IntegrationTests
                 Model = "Corolla",
                 Year = 2021,       // mise à jour
                 SellingPrice = 16000,
-                Image = new FormFile(Stream.Null, 0, 0, null, null)
+                Image = new FormFile(Stream.Null, 0, 0, null, null),
+                Finition = "LX"
             };
 
             // Act
@@ -316,7 +317,7 @@ namespace ExpressVoitures.IntegrationTests
 
             // Assert
             var redirectResult = Assert.IsType<RedirectToActionResult>(result);
-            Assert.Equal("Index", redirectResult.ActionName);
+            Assert.Equal("Deleted", redirectResult.ActionName);
             var carInDb = await _context.Cars.FindAsync(1);
             Assert.Null(carInDb);
         }

@@ -3,16 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\ExpressVoiture\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4217A46E-2D8A-445E-8890-CA67042DD6CF}|ExpressVoitures\\ExpressVoitures.csproj|c:\\users\\lightnyng83\\desktop\\openclassrooms\\expressvoiture\\expressvoitures\\viewmodels\\careditionviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4217A46E-2D8A-445E-8890-CA67042DD6CF}|ExpressVoitures\\ExpressVoitures.csproj|solutionrelative:expressvoitures\\viewmodels\\careditionviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{477B6BC0-27E9-4E68-8C3C-D81B17DD1260}|ExpressVoiture.Tests\\ExpressVoiture.Tests.csproj|c:\\users\\lightnyng83\\desktop\\openclassrooms\\expressvoiture\\expressvoiture.tests\\carcontrollerintegrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{477B6BC0-27E9-4E68-8C3C-D81B17DD1260}|ExpressVoiture.Tests\\ExpressVoiture.Tests.csproj|solutionrelative:expressvoiture.tests\\carcontrollerintegrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4217A46E-2D8A-445E-8890-CA67042DD6CF}|ExpressVoitures\\ExpressVoitures.csproj|c:\\users\\lightnyng83\\desktop\\openclassrooms\\expressvoiture\\expressvoitures\\views\\admin\\carcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4217A46E-2D8A-445E-8890-CA67042DD6CF}|ExpressVoitures\\ExpressVoitures.csproj|solutionrelative:expressvoitures\\views\\admin\\carcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4217A46E-2D8A-445E-8890-CA67042DD6CF}|ExpressVoitures\\ExpressVoitures.csproj|c:\\users\\lightnyng83\\desktop\\openclassrooms\\expressvoiture\\expressvoitures\\viewmodels\\careditviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4217A46E-2D8A-445E-8890-CA67042DD6CF}|ExpressVoitures\\ExpressVoitures.csproj|solutionrelative:expressvoitures\\viewmodels\\careditviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4217A46E-2D8A-445E-8890-CA67042DD6CF}|ExpressVoitures\\ExpressVoitures.csproj|c:\\users\\lightnyng83\\desktop\\openclassrooms\\expressvoiture\\expressvoitures\\views\\admin\\carcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4217A46E-2D8A-445E-8890-CA67042DD6CF}|ExpressVoitures\\ExpressVoitures.csproj|solutionrelative:expressvoitures\\views\\admin\\carcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4217A46E-2D8A-445E-8890-CA67042DD6CF}|ExpressVoitures\\ExpressVoitures.csproj|c:\\users\\lightnyng83\\desktop\\openclassrooms\\expressvoiture\\expressvoitures\\viewmodels\\careditionviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4217A46E-2D8A-445E-8890-CA67042DD6CF}|ExpressVoitures\\ExpressVoitures.csproj|solutionrelative:expressvoitures\\viewmodels\\careditionviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4217A46E-2D8A-445E-8890-CA67042DD6CF}|ExpressVoitures\\ExpressVoitures.csproj|c:\\users\\lightnyng83\\desktop\\openclassrooms\\expressvoiture\\expressvoitures\\viewmodels\\carviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4217A46E-2D8A-445E-8890-CA67042DD6CF}|ExpressVoitures\\ExpressVoitures.csproj|solutionrelative:expressvoitures\\viewmodels\\carviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4217A46E-2D8A-445E-8890-CA67042DD6CF}|ExpressVoitures\\ExpressVoitures.csproj|c:\\users\\lightnyng83\\desktop\\openclassrooms\\expressvoiture\\expressvoitures\\views\\car\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4217A46E-2D8A-445E-8890-CA67042DD6CF}|ExpressVoitures\\ExpressVoitures.csproj|solutionrelative:expressvoitures\\views\\car\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4217A46E-2D8A-445E-8890-CA67042DD6CF}|ExpressVoitures\\ExpressVoitures.csproj|c:\\users\\lightnyng83\\desktop\\openclassrooms\\expressvoiture\\expressvoitures\\views\\car\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -33,10 +45,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{4217A46E-2D8A-445E-8890-CA67042DD6CF}|ExpressVoitures\\ExpressVoitures.csproj|c:\\users\\lightnyng83\\desktop\\openclassrooms\\expressvoiture\\expressvoitures\\viewmodels\\carcreateviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4217A46E-2D8A-445E-8890-CA67042DD6CF}|ExpressVoitures\\ExpressVoitures.csproj|solutionrelative:expressvoitures\\viewmodels\\carcreateviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4217A46E-2D8A-445E-8890-CA67042DD6CF}|ExpressVoitures\\ExpressVoitures.csproj|c:\\users\\lightnyng83\\desktop\\openclassrooms\\expressvoiture\\expressvoitures\\viewmodels\\carviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4217A46E-2D8A-445E-8890-CA67042DD6CF}|ExpressVoitures\\ExpressVoitures.csproj|solutionrelative:expressvoitures\\viewmodels\\carviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 394,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -74,7 +82,33 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CarControllerIntegrationTests.cs",
+              "DocumentMoniker": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\ExpressVoiture\\ExpressVoiture.Tests\\CarControllerIntegrationTests.cs",
+              "RelativeDocumentMoniker": "ExpressVoiture.Tests\\CarControllerIntegrationTests.cs",
+              "ToolTip": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\ExpressVoiture\\ExpressVoiture.Tests\\CarControllerIntegrationTests.cs",
+              "RelativeToolTip": "ExpressVoiture.Tests\\CarControllerIntegrationTests.cs",
+              "ViewState": "AgIAAM4AAAAAAAAAAAAAwAABAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-09T17:10:13.713Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\ExpressVoiture\\ExpressVoitures\\Views\\Car\\Delete.cshtml",
+              "RelativeDocumentMoniker": "ExpressVoitures\\Views\\Car\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\ExpressVoiture\\ExpressVoitures\\Views\\Car\\Delete.cshtml",
+              "RelativeToolTip": "ExpressVoitures\\Views\\Car\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-09T16:52:24.901Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "20250209163758_AddScaffoldIdentity.cs",
               "DocumentMoniker": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\ExpressVoiture\\ExpressVoitures\\Data\\Migrations\\20250209163758_AddScaffoldIdentity.cs",
               "RelativeDocumentMoniker": "ExpressVoitures\\Data\\Migrations\\20250209163758_AddScaffoldIdentity.cs",
@@ -87,20 +121,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "CarEditViewModel.cs",
               "DocumentMoniker": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\ExpressVoiture\\ExpressVoitures\\ViewModels\\CarEditViewModel.cs",
               "RelativeDocumentMoniker": "ExpressVoitures\\ViewModels\\CarEditViewModel.cs",
               "ToolTip": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\ExpressVoiture\\ExpressVoitures\\ViewModels\\CarEditViewModel.cs",
               "RelativeToolTip": "ExpressVoitures\\ViewModels\\CarEditViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-09T16:32:05.138Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "CarEditionViewModel.cs",
               "DocumentMoniker": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\ExpressVoiture\\ExpressVoitures\\ViewModels\\CarEditionViewModel.cs",
               "RelativeDocumentMoniker": "ExpressVoitures\\ViewModels\\CarEditionViewModel.cs",
@@ -113,7 +147,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\ExpressVoiture\\ExpressVoitures\\Views\\Car\\Edit.cshtml",
               "RelativeDocumentMoniker": "ExpressVoitures\\Views\\Car\\Edit.cshtml",
@@ -126,7 +160,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "CarCreateViewModel.cs",
               "DocumentMoniker": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\ExpressVoiture\\ExpressVoitures\\ViewModels\\CarCreateViewModel.cs",
               "RelativeDocumentMoniker": "ExpressVoitures\\ViewModels\\CarCreateViewModel.cs",
@@ -139,7 +173,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 4,
               "Title": "CarViewModel.cs",
               "DocumentMoniker": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\ExpressVoiture\\ExpressVoitures\\ViewModels\\CarViewModel.cs",
               "RelativeDocumentMoniker": "ExpressVoitures\\ViewModels\\CarViewModel.cs",
@@ -152,7 +186,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "Create.css",
               "DocumentMoniker": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\ExpressVoiture\\ExpressVoitures\\wwwroot\\css\\Create.css",
               "RelativeDocumentMoniker": "ExpressVoitures\\wwwroot\\css\\Create.css",
@@ -165,7 +199,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\ExpressVoiture\\ExpressVoitures\\Views\\Car\\Create.cshtml",
               "RelativeDocumentMoniker": "ExpressVoitures\\Views\\Car\\Create.cshtml",
@@ -178,13 +212,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "CarController.cs",
               "DocumentMoniker": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\ExpressVoiture\\ExpressVoitures\\Views\\Admin\\CarController.cs",
               "RelativeDocumentMoniker": "ExpressVoitures\\Views\\Admin\\CarController.cs",
               "ToolTip": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\ExpressVoiture\\ExpressVoitures\\Views\\Admin\\CarController.cs",
               "RelativeToolTip": "ExpressVoitures\\Views\\Admin\\CarController.cs",
-              "ViewState": "AgIAAKkAAAAAAAAAAAAnwM0AAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAGMBAAAAAAAAAAAIwI8BAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-09T15:22:17.199Z",
               "EditorCaption": ""

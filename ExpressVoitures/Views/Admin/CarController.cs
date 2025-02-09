@@ -25,11 +25,8 @@ namespace ExpressVoitures.Views.Admin
             _hostEnvironment = hostEnvironment;
         }
 
-        public async Task<IActionResult> Completed()
-        {
-            return View();
-        }
 
+        #region ----- Read -----
 
         //GET: Car
         public async Task<IActionResult> Index()
@@ -55,6 +52,10 @@ namespace ExpressVoitures.Views.Admin
             return View(car);
         }
 
+        #endregion
+
+        #region ----- Create -----
+
         // GET: Car/Create
         public async Task<IActionResult> Create()
         {
@@ -78,47 +79,6 @@ namespace ExpressVoitures.Views.Admin
             return View(viewModel);
         }
 
-        private async Task<IActionResult> ValidateForm(dynamic carViewModel)
-        {
-
-            if (carViewModel.Year < 1990 || carViewModel.Year > (int)DateTime.Now.Year)
-            {
-                ModelState.AddModelError(nameof(carViewModel.Year), $"L'année doit être comprise entre 1990 et {(int)DateTime.Now.Year}");
-            }
-            if (carViewModel.SellingPrice <= 0)
-            {
-                ModelState.AddModelError(nameof(carViewModel.SellingPrice), "Vous devez saisir un prix de vente supérieur à 0");
-            }
-            if (carViewModel.SelectedCarBrandModelId == 0 && carViewModel.Model == null)
-            {
-                ModelState.AddModelError(nameof(carViewModel.Model), "Vous devez saisir ou sélectionner un modèle");
-            }
-            if (carViewModel.SelectedCarBrandId == 0 && carViewModel.Brand == null)
-            {
-                ModelState.AddModelError(nameof(carViewModel.Brand), "Vous devez saisir ou sélectionner une marque");
-            }
-            if (string.IsNullOrEmpty(carViewModel.Finition))
-            {
-                ModelState.Remove(nameof(carViewModel.Finition));
-                ModelState.AddModelError(nameof(carViewModel.Finition), "Vous devez saisir une finition");
-            }
-
-            if (ModelState.ErrorCount > 0)
-            {
-                if (carViewModel is CarCreateViewModel createViewModel)
-                {
-                    return View(createViewModel);
-                }
-                else if (carViewModel is CarEditionViewModel editionViewModel)
-                {
-                    return View(editionViewModel);
-                }
-
-            }
-            return Ok();
-        }
-
-
         // POST: Car/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -128,23 +88,7 @@ namespace ExpressVoitures.Views.Admin
         {
             string uniqueFileName = "";
 
-            if (carViewModel.BrandList == null && carViewModel.ModelList == null)
-            {
-                // Repopuler les listes déroulantes
-                carViewModel.BrandList = (await _carService.GetBrand())
-                    .Select(b => new SelectListItem { Value = b.CarBrandName, Text = b.CarBrandName });
-                carViewModel.ModelList = (await _carService.GetModel())
-                    .Select(m => new SelectListItem { Value = m.CarModelName, Text = m.CarModelName });
-                ModelState.Clear();
-                TryValidateModel(carViewModel);
-            }
-
-            if (carViewModel.Image == null)
-            {
-                carViewModel.Image = new FormFile(Stream.Null, 0, 0, null, null);
-                ModelState.Clear();
-                TryValidateModel(carViewModel);
-            }
+            
             ValidateForm(carViewModel);
 
             if (ModelState.IsValid)
@@ -191,6 +135,14 @@ namespace ExpressVoitures.Views.Admin
                 return View(carViewModel);
             
         }
+        public async Task<IActionResult> Completed()
+        {
+            return View();
+        }
+
+        #endregion
+
+        #region ----- Edit ----- 
 
         // GET: Car/Edit/5
         public async Task<IActionResult> Edit(int id)
@@ -233,23 +185,7 @@ namespace ExpressVoitures.Views.Admin
         public async Task<IActionResult> Edit([FromForm] CarEditionViewModel carViewModel, int id)
         {
 
-            if (carViewModel.BrandList == null && carViewModel.ModelList == null)
-            {
-                // Repopuler les listes déroulantes
-                carViewModel.BrandList = (await _carService.GetBrand())
-                    .Select(b => new SelectListItem { Value = b.CarBrandName, Text = b.CarBrandName });
-                carViewModel.ModelList = (await _carService.GetModel())
-                    .Select(m => new SelectListItem { Value = m.CarModelName, Text = m.CarModelName });
-                ModelState.Clear();
-                TryValidateModel(carViewModel);
-            }
-
-            if (carViewModel.Image == null)
-            {
-                carViewModel.Image = new FormFile(Stream.Null, 0, 0, null, null);
-                ModelState.Clear();
-                TryValidateModel(carViewModel);
-            }
+            
             ValidateForm(carViewModel);
 
             if (ModelState.IsValid)
@@ -299,6 +235,10 @@ namespace ExpressVoitures.Views.Admin
             return View(carViewModel);
         }
 
+        #endregion
+
+        #region ----- Delete -----
+
         // GET: Car/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -347,12 +287,18 @@ namespace ExpressVoitures.Views.Admin
             return View(carViewModel);
         }
 
+        #endregion
 
         #region ----- PRIVATE METHODS -----
         private bool CarExists(int id)
         {
             return _carService.GetAllCars().Result.Any(e => e.CarId == id);
         }
+        /// <summary>
+        /// Permet d'ajouter l'image de l'utilisateur à une voiture, si l'utilisateur ne donne pas d'image, permet d'appliquer une image par défaut.
+        /// </summary>
+        /// <param name="formFile">Image sans type particulier pour le moment</param>
+        /// <returns></returns>
         private async Task<string> SavePicture (IFormFile formFile)
         {
             string uniqueFileName = "default.jpg";
@@ -380,14 +326,18 @@ namespace ExpressVoitures.Views.Admin
             }
             return uniqueFileName;
         }
-
-        private  async Task DeletePicture(string url)
+        /// <summary>
+        /// Permet de supprimer une image de la voiture à l'exception de l'image par défaut
+        /// </summary>
+        /// <param name="imageName">nom de l'image</param>
+        /// <returns></returns>
+        private async Task DeletePicture(string imageName)
         {
             const string uniqueFileName = "default.jpg";
 
             string imageUrl = Path.Combine(_hostEnvironment.WebRootPath, "images");
-            string filePath = Path.Combine(imageUrl, url);
-            if (url != uniqueFileName)
+            string filePath = Path.Combine(imageUrl, imageName);
+            if (imageName != uniqueFileName)
             {
                 using (var fileStream = new FileStream(filePath, FileMode.Open))
                 {
@@ -396,6 +346,72 @@ namespace ExpressVoitures.Views.Admin
                 }
             }
         }
+        /// <summary>
+        /// Permet de valider les données du formulaire
+        /// </summary>
+        /// <param name="carViewModel">objet dynamique pour s'adapter a un Create ou un Edit</param>
+        /// <returns></returns>
+        private async Task<IActionResult> ValidateForm(dynamic carViewModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                if (carViewModel.BrandList == null && carViewModel.ModelList == null)
+                {
+                    // Repopuler les listes déroulantes
+                    carViewModel.BrandList = (await _carService.GetBrand())
+                        .Select(b => new SelectListItem { Value = b.CarBrandName, Text = b.CarBrandName });
+                    carViewModel.ModelList = (await _carService.GetModel())
+                        .Select(m => new SelectListItem { Value = m.CarModelName, Text = m.CarModelName });
+                    ModelState.Clear();
+                    TryValidateModel(carViewModel);
+                }
+
+                if (carViewModel.Image == null)
+                {
+                    carViewModel.Image = new FormFile(Stream.Null, 0, 0, null, null);
+                    ModelState.Clear();
+                    TryValidateModel(carViewModel);
+                }
+            }
+           
+
+            if (carViewModel.Year < 1990 || carViewModel.Year > (int)DateTime.Now.Year)
+            {
+                ModelState.AddModelError(nameof(carViewModel.Year), $"L'année doit être comprise entre 1990 et {(int)DateTime.Now.Year}");
+            }
+            if (carViewModel.SellingPrice <= 0)
+            {
+                ModelState.AddModelError(nameof(carViewModel.SellingPrice), "Vous devez saisir un prix de vente supérieur à 0");
+            }
+            if (carViewModel.SelectedCarBrandModelId == 0 && carViewModel.Model == null)
+            {
+                ModelState.AddModelError(nameof(carViewModel.Model), "Vous devez saisir ou sélectionner un modèle");
+            }
+            if (carViewModel.SelectedCarBrandId == 0 && carViewModel.Brand == null)
+            {
+                ModelState.AddModelError(nameof(carViewModel.Brand), "Vous devez saisir ou sélectionner une marque");
+            }
+            if (string.IsNullOrEmpty(carViewModel.Finition))
+            {
+                ModelState.Remove(nameof(carViewModel.Finition));
+                ModelState.AddModelError(nameof(carViewModel.Finition), "Vous devez saisir une finition");
+            }
+
+            if (ModelState.ErrorCount > 0)
+            {
+                if (carViewModel is CarCreateViewModel createViewModel)
+                {
+                    return View(createViewModel);
+                }
+                else if (carViewModel is CarEditionViewModel editionViewModel)
+                {
+                    return View(editionViewModel);
+                }
+
+            }
+            return Ok();
+        }
+
         #endregion
     }
 }
