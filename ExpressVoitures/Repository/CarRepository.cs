@@ -29,7 +29,7 @@ namespace ExpressVoitures.Repository
         public async Task DeleteCar(int carId)
         {
             var car = await _context.Cars.FindAsync(carId);
-            _context.Cars.Remove(car);
+            _context.Cars.Remove(car!);
             _context.SaveChanges();
         }
 

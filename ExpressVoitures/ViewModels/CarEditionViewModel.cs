@@ -20,13 +20,13 @@ namespace ExpressVoitures.ViewModels
         [Required]
         public int SellingPrice { get; set; }
         [Required]
-        public string Finition { get; set; }
-        public IFormFile Image { get; set; }
+        public required string Finition { get; set; }
+        public IFormFile? Image { get; set; }
         public string? Brand { get; set; }
         public string? Model { get; set; }
 
-        public IEnumerable<SelectListItem> BrandList { get; set; }
-        public IEnumerable<SelectListItem> ModelList { get; set; }
+        public IEnumerable<SelectListItem>? BrandList { get; set; }
+        public IEnumerable<SelectListItem>? ModelList { get; set; }
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {

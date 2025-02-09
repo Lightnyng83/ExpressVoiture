@@ -175,8 +175,8 @@ namespace ExpressVoitures.IntegrationTests
             // Assert
             var viewResult = Assert.IsType<ViewResult>(result);
             var viewModel = Assert.IsType<CarCreateViewModel>(viewResult.Model);
-            Assert.Single(viewModel.BrandList);
-            Assert.Single(viewModel.ModelList);
+            Assert.Single(viewModel.BrandList!);
+            Assert.Single(viewModel.ModelList!);
         }
 
         [Fact]
@@ -193,7 +193,7 @@ namespace ExpressVoitures.IntegrationTests
                 Model = "Corolla",
                 Year = 2020,
                 SellingPrice = 15000,
-                Image = new FormFile(Stream.Null, 0, 0, null, null),// Pas de fichier image pour ce test.
+                Image = new FormFile(Stream.Null, 0, 0, null!, null!),// Pas de fichier image pour ce test.
                 Finition = "LX"
             };
 
@@ -253,7 +253,7 @@ namespace ExpressVoitures.IntegrationTests
                 Model = "Corolla",
                 Year = 2021,       // mise à jour
                 SellingPrice = 16000,
-                Image = new FormFile(Stream.Null, 0, 0, null, null),
+                Image = new FormFile(Stream.Null, 0, 0, null!, null!),
                 Finition = "LX"
             };
 

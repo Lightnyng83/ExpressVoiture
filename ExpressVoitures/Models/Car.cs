@@ -20,7 +20,7 @@ public partial class Car
     public string? ImageUrl { get; set; }
 
     public int SellingPrice { get; set; }
-    public string Finition { get; set; }
+    public string? Finition { get; set; }
 
     [ForeignKey("CarBrandModelId")]
     [InverseProperty("Cars")]

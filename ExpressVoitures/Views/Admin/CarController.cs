@@ -89,11 +89,11 @@ namespace ExpressVoitures.Views.Admin
             string uniqueFileName = "";
 
             
-            ValidateForm(carViewModel);
+            await ValidateForm(carViewModel);
 
             if (ModelState.IsValid)
             {
-                uniqueFileName = await SavePicture(carViewModel.Image);
+                uniqueFileName = await SavePicture(carViewModel!.Image!);
 
                 
                 
@@ -107,15 +107,15 @@ namespace ExpressVoitures.Views.Admin
                     await _carService.AddModel(new CarModel { CarModelName = carViewModel.Model });
                 }
 
-                CarBrandModel? brandModel = await _carService.GetBrandModelId(_carService.GetBrandByName(carViewModel.Brand).Result.CarBrandId, _carService.GetModelByName(carViewModel.Model).Result.CarModelId);
+                CarBrandModel? brandModel = await _carService.GetBrandModelId(_carService!.GetBrandByName(carViewModel!.Brand!).Result!.CarBrandId, _carService.GetModelByName(carViewModel.Model!).Result!.CarModelId);
                 if (brandModel == null)
                 {
-                    await _carService.AddBrandModel(new CarBrandModel { CarBrandId = _carService.GetBrandByName(carViewModel.Brand).Result.CarBrandId, CarModelId = _carService.GetModelByName(carViewModel.Model).Result.CarModelId });
+                    await _carService.AddBrandModel(new CarBrandModel { CarBrandId = _carService.GetBrandByName(carViewModel.Brand!).Result!.CarBrandId, CarModelId = _carService.GetModelByName(carViewModel.Model!).Result!.CarModelId });
                 }
                     
                 var newcar = new Car
                 {
-                    CarBrandModelId = brandModel != null ? brandModel.CarBrandModelId : _carService.GetBrandModelId(_carService.GetBrandByName(carViewModel.Brand).Result.CarBrandId, _carService.GetModelByName(carViewModel.Model).Result.CarModelId).Result.CarBrandModelId,
+                    CarBrandModelId = brandModel != null ? brandModel.CarBrandModelId : _carService.GetBrandModelId(_carService.GetBrandByName(carViewModel.Brand!).Result!.CarBrandId, _carService.GetModelByName(carViewModel.Model!).Result!.CarModelId).Result!.CarBrandModelId,
                     Year = carViewModel.Year,
                     SellingPrice = carViewModel.SellingPrice,
                     ImageUrl = uniqueFileName, // Par exemple "GUID_NomFichier.ext"
@@ -135,7 +135,7 @@ namespace ExpressVoitures.Views.Admin
                 return View(carViewModel);
             
         }
-        public async Task<IActionResult> Completed()
+        public IActionResult Completed()
         {
             return View();
         }
@@ -160,7 +160,7 @@ namespace ExpressVoitures.Views.Admin
                 SellingPrice = car.SellingPrice,
                 Brand = car.CarBrandModel.CarBrand.CarBrandName,
                 Model = car.CarBrandModel.CarModel.CarModelName,
-                Finition = car.Finition,
+                Finition = car.Finition!,
                 BrandList = (await _carService.GetBrand()).Select(b => new SelectListItem
                 {
                     Value = b.CarBrandName,
@@ -186,7 +186,7 @@ namespace ExpressVoitures.Views.Admin
         {
 
             
-            ValidateForm(carViewModel);
+            await ValidateForm(carViewModel);
 
             if (ModelState.IsValid)
             {
@@ -196,9 +196,9 @@ namespace ExpressVoitures.Views.Admin
                 {
                     uniqueFileName = await SavePicture(carViewModel.Image);
                 }
-                else if (existingCar.ImageUrl != uniqueFileName && carViewModel.Image.Length == 0)
+                else if (existingCar!.ImageUrl != uniqueFileName && carViewModel.Image!.Length == 0)
                 {
-                    uniqueFileName = existingCar.ImageUrl;
+                    uniqueFileName = existingCar.ImageUrl!;
                 }
                 else
                 {
@@ -209,7 +209,7 @@ namespace ExpressVoitures.Views.Admin
                     var updatecar = new Car
                     {
                         CarId = id,
-                        CarBrandModelId = _carService.GetBrandModelId(_carService.GetBrandByName(carViewModel.Brand).Result.CarBrandId, _carService.GetModelByName(carViewModel.Model).Result.CarModelId).Result.CarBrandModelId,
+                        CarBrandModelId = _carService.GetBrandModelId(_carService.GetBrandByName(carViewModel.Brand!).Result!.CarBrandId!, _carService.GetModelByName(carViewModel.Model!).Result!.CarModelId).Result!.CarBrandModelId,
                         Year = carViewModel.Year,
                         SellingPrice = carViewModel.SellingPrice,
                         ImageUrl = uniqueFileName, // Par exemple "GUID_NomFichier.ext"
@@ -266,16 +266,16 @@ namespace ExpressVoitures.Views.Admin
             {
                 if(car.ImageUrl!=null)
                 { 
-                    await DeletePicture(car.ImageUrl); 
+                    DeletePicture(car.ImageUrl); 
                 }
 
                 await _carService.DeleteCar(id);
             }
 
-            return RedirectToAction(nameof(Deleted), new { brand = car.CarBrandModel.CarBrand.CarBrandName, model = car.CarBrandModel.CarModel.CarModelName, year = car.Year, finition = car.Finition });
+            return RedirectToAction(nameof(Deleted), new { brand = car!.CarBrandModel.CarBrand.CarBrandName, model = car.CarBrandModel.CarModel.CarModelName, year = car.Year, finition = car.Finition });
         }
 
-        public async Task<IActionResult> Deleted(string brand, string model,int year, string finition)
+        public IActionResult Deleted(string brand, string model, int year, string finition)
         {
             var carViewModel = new CarViewModel
             {
@@ -331,7 +331,7 @@ namespace ExpressVoitures.Views.Admin
         /// </summary>
         /// <param name="imageName">nom de l'image</param>
         /// <returns></returns>
-        private async Task DeletePicture(string imageName)
+        private void DeletePicture(string imageName)
         {
             const string uniqueFileName = "default.jpg";
 
@@ -368,7 +368,7 @@ namespace ExpressVoitures.Views.Admin
 
                 if (carViewModel.Image == null)
                 {
-                    carViewModel.Image = new FormFile(Stream.Null, 0, 0, null, null);
+                    carViewModel.Image = new FormFile(Stream.Null, 0, 0, null!, null!);
                     ModelState.Clear();
                     TryValidateModel(carViewModel);
                 }

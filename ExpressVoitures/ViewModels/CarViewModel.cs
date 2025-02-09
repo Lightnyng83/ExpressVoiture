@@ -9,7 +9,7 @@ namespace ExpressVoitures.ViewModels
         public int Year { get; set; }
         public IFormFile? Image { get; set; }
         public int SellingPrice { get; set; }
-        public string Finition { get; set; }
+        public required string Finition { get; set; }
         // Propriétés pour alimenter les listes déroulantes
         public int SelectedCarBrandId { get; set; }
         public int SelectedCarBrandModelId { get; set; }

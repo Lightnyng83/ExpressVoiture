@@ -27,7 +27,7 @@
             <label for="Brand" class="control-label">Marque</label>
             <input type="text" class="form-control" id="Brand" name="Brand" list="brandList" value="@Model.Brand" />
             <datalist id="brandList">
-                @foreach (var brand in Model.BrandList)
+                @foreach (var brand in Model.BrandList!)
                 {
                     <option value="@brand.Value"></option>
                 }
@@ -39,7 +39,7 @@
             <label for="Model" class="control-label">Modèle</label>
             <input type="text" class="form-control" id="Model" name="Model" list="modelList" value="@Model.Model" />
             <datalist id="modelList">
-                @foreach (var modele in Model.ModelList)
+                @foreach (var modele in Model.ModelList!)
                 {
                     <option value="@modele.Value"></option>
                 }
