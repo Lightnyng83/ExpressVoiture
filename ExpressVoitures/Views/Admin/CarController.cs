@@ -139,6 +139,7 @@ namespace ExpressVoitures.Views.Admin
                 SellingPrice = car.SellingPrice,
                 Brand = car.CarBrandModel.CarBrand.CarBrandName,
                 Model = car.CarBrandModel.CarModel.CarModelName,
+                Finition = car.Finition,
                 BrandList = (await _carService.GetBrand()).Select(b => new SelectListItem
                 {
                     Value = b.CarBrandName,

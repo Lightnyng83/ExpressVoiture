@@ -20,6 +20,7 @@ namespace ExpressVoitures.ViewModels
         // Valeurs saisies par l'utilisateur (marque et modèle)
         public string? Brand { get; set; }
         public string? Model { get; set; }
+        public string? Finition { get; set; }
 
         // Listes pour les suggestions
         public IEnumerable<SelectListItem> BrandList { get; set; } = Enumerable.Empty<SelectListItem>();

@@ -6,74 +6,75 @@
 
 }
 
-<h1>Edit</h1>
+<link rel="stylesheet" href="~/css/Create.css" />
+<div class="container">
+    <a href="/Car" class="back-link">
+        <span class="back-arrow">Retour</span>
+    </a>
+    <h1 class="form-title">Ajouter une voiture</h1>
+    <p class="form-subtitle">tous les champs sont obligatoires</p>
 
-<h4>Car</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit" enctype="multipart/form-data">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <form asp-action="Create" method="post" enctype="multipart/form-data">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-            <!-- Marque -->
-            <div class="form-group">
-                <label for="SelectedBrand" class="control-label">Marque</label>
-                <select id="SelectedBrand" name="Brand" class="form-control" style="width: 100%;" asp-for="Brand">
-                    @foreach (var brand in Model.BrandList)
-                    {
-                        <option value="@brand.Value">@brand.Text</option>
-                    }
-                </select>
-                <span asp-validation-for="Brand" class="text-danger"></span>
+        <div class="form-group">
+            <label asp-for="SellingPrice" class="control-label">Prix de vente</label>
+            <input asp-for="SellingPrice" class="form-control" type="number" />
+            <span asp-validation-for="SellingPrice" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Year" class="control-label">Année</label>
+            <input asp-for="Year" class="form-control" type="number" />
+            <span asp-validation-for="Year" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="Brand" class="control-label">Marque</label>
+            <input type="text" class="form-control" id="Brand" name="Brand" list="brandList" value="@Model.Brand" />
+            <datalist id="brandList">
+                @foreach (var brand in Model.BrandList)
+                {
+                    <option value="@brand.Value"></option>
+                }
+            </datalist>
+            <span asp-validation-for="Brand" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="Model" class="control-label">Modèle</label>
+            <input type="text" class="form-control" id="Model" name="Model" list="modelList" value="@Model.Model" />
+            <datalist id="modelList">
+                @foreach (var modele in Model.ModelList)
+                {
+                    <option value="@modele.Value"></option>
+                }
+            </datalist>
+            <span asp-validation-for="Model" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Finition" class="control-label">Finition</label>
+            <input asp-for="Finition" class="form-control" />
+            <span asp-validation-for="Finition" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Image" class="control-label">Visuel</label>
+            <div class="file-upload-wrapper">
+                <label for="Image" class="file-upload-button">
+                    Ajouter une image
+                </label>
+                <input type="file" asp-for="Image" class="form-control" id="Image" accept="image/*" />
             </div>
+            <span asp-validation-for="Image" class="text-danger"></span>
+        </div>
 
-
-            <!-- Modèle -->
-            <div class="form-group">
-                <label for="SelectedModel" class="control-label">Modèle</label>
-                <select id="SelectedModel" name="Model" class="form-control" style="width: 100%;" asp-for="Model">
-                    @foreach (var modele in Model.ModelList)
-                    {
-                        <option value="@modele.Value">@modele.Text</option>
-                    }
-                </select>
-                <span asp-validation-for="Model" class="text-danger"></span>
-            </div>
-
-
-            <!-- Year -->
-            <div class="form-group">
-                <label asp-for="Year" class="control-label"></label>
-                <input asp-for="Year" class="form-control" />
-                <span asp-validation-for="Year" class="text-danger"></span>
-            </div>
-
-            <!-- SellingPrice -->
-            <div class="form-group">
-                <label asp-for="SellingPrice" class="control-label"></label>
-                <input asp-for="SellingPrice" class="form-control" />
-                <span asp-validation-for="SellingPrice" class="text-danger"></span>
-            </div>
-
-            <!-- Image -->
-            <div class="form-group">
-                <label asp-for="Image" class="control-label"></label>
-                <input type="file" asp-for="Image" class="form-control" />
-                <span asp-validation-for="Image" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
-
-    </div>
+        <div class="form-group">
+            <input type="submit" value="Publier" />
+        </div>
+    </form>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
