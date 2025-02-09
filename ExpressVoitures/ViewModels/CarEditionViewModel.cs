@@ -6,15 +6,40 @@ namespace ExpressVoitures.ViewModels
 {
     public class CarEditionViewModel
     {
+        public int CarId { get; set; }
+
+        [Required]
+        public int SelectedCarBrandId { get; set; }
+
+        [Required]
+        public int SelectedCarBrandModelId { get; set; }
+
         [Required]
         public int Year { get; set; }
+
         [Required]
         public int SellingPrice { get; set; }
-        public IFormFile Image { get; set; } = new FormFile(Stream.Null, 0, 0, null, null);
+        [Required]
+        public string Finition { get; set; }
+        public IFormFile Image { get; set; }
         public string? Brand { get; set; }
         public string? Model { get; set; }
-        // Propriétés pour alimenter les listes déroulantes
-        public IEnumerable<SelectListItem> BrandList { get; set; } = Enumerable.Empty<SelectListItem>();
-        public IEnumerable<SelectListItem> ModelList { get; set; } = Enumerable.Empty<SelectListItem>();
+
+        public IEnumerable<SelectListItem> BrandList { get; set; }
+        public IEnumerable<SelectListItem> ModelList { get; set; }
+
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            int currentYear = DateTime.Now.Year;
+            if (Year < 1990 || Year > currentYear)
+            {
+                yield return new ValidationResult($"L'année doit être comprise entre 1990 et {currentYear}.", new[] { nameof(Year) });
+            }
+
+            if (SellingPrice <= 0)
+            {
+                yield return new ValidationResult("Le prix de vente doit être supérieur à 0.", new[] { nameof(SellingPrice) });
+            }
+        }
     }
 }

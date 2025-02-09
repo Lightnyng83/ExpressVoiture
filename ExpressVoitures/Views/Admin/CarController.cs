@@ -78,9 +78,8 @@ namespace ExpressVoitures.Views.Admin
             return View(viewModel);
         }
 
-        private async Task<IActionResult> ValidateForm(CarCreateViewModel carViewModel)
+        private async Task<IActionResult> ValidateForm(dynamic carViewModel)
         {
-            
 
             if (carViewModel.Year < 1990 || carViewModel.Year > (int)DateTime.Now.Year)
             {
@@ -106,7 +105,15 @@ namespace ExpressVoitures.Views.Admin
 
             if (ModelState.ErrorCount > 0)
             {
-                return View(carViewModel);
+                if (carViewModel is CarCreateViewModel createViewModel)
+                {
+                    return View(createViewModel);
+                }
+                else if (carViewModel is CarEditionViewModel editionViewModel)
+                {
+                    return View(editionViewModel);
+                }
+
             }
             return Ok();
         }
@@ -194,7 +201,7 @@ namespace ExpressVoitures.Views.Admin
                 return NotFound();
             }
 
-            var viewModel = new CarEditViewModel
+            var viewModel = new CarEditionViewModel
             {
                 CarId = car.CarId,
                 Year = car.Year,
@@ -225,6 +232,26 @@ namespace ExpressVoitures.Views.Admin
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit([FromForm] CarEditionViewModel carViewModel, int id)
         {
+
+            if (carViewModel.BrandList == null && carViewModel.ModelList == null)
+            {
+                // Repopuler les listes déroulantes
+                carViewModel.BrandList = (await _carService.GetBrand())
+                    .Select(b => new SelectListItem { Value = b.CarBrandName, Text = b.CarBrandName });
+                carViewModel.ModelList = (await _carService.GetModel())
+                    .Select(m => new SelectListItem { Value = m.CarModelName, Text = m.CarModelName });
+                ModelState.Clear();
+                TryValidateModel(carViewModel);
+            }
+
+            if (carViewModel.Image == null)
+            {
+                carViewModel.Image = new FormFile(Stream.Null, 0, 0, null, null);
+                ModelState.Clear();
+                TryValidateModel(carViewModel);
+            }
+            ValidateForm(carViewModel);
+
             if (ModelState.IsValid)
             {
                 var existingCar = await _carService.GetCarById(id);
@@ -249,7 +276,8 @@ namespace ExpressVoitures.Views.Admin
                         CarBrandModelId = _carService.GetBrandModelId(_carService.GetBrandByName(carViewModel.Brand).Result.CarBrandId, _carService.GetModelByName(carViewModel.Model).Result.CarModelId).Result.CarBrandModelId,
                         Year = carViewModel.Year,
                         SellingPrice = carViewModel.SellingPrice,
-                        ImageUrl = uniqueFileName // Par exemple "GUID_NomFichier.ext"
+                        ImageUrl = uniqueFileName, // Par exemple "GUID_NomFichier.ext"
+                        Finition = carViewModel.Finition
 
                     };
 
