@@ -21,9 +21,9 @@
                 <p class="info-row">@Model.CarBrandModel.CarModel.CarModelName</p>
                 <p class="info-row">@Model.Finition</p>
             </div>
-            <form asp-action="Supprimer">
+            <form asp-action="Delete">
                 <input type="hidden" asp-for="CarId" />
-                <input type="submit" value="Delete" class="btn btn-danger" />
+                <input type="submit" value="Supprimer" class="btn btn-danger" />
             </form>
         </div>
         

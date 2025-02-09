@@ -25,7 +25,7 @@ body {
 
 /* Style de base pour les liens */
 .nav-link {
-    color: black;
+    color: #2C1810;
     text-decoration: none;
     padding: 8px 16px;
     transition: all 0.3s ease; /* Pour une animation fluide */
@@ -43,16 +43,18 @@ body {
 
 /*---------------Index --------------------*/
 .container {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 20px;
 }
 
 .page-title {
     text-align: center;
-    color: #333;
+    color: #796157;
     font-size: 2rem;
     margin-bottom: 30px;
+    font-family: 'Libre Baskerville', serif;
+    font-style:italic
 }
 
 .add-car-button {
@@ -60,7 +62,7 @@ body {
     width: fit-content;
     margin: 0 auto 40px;
     padding: 10px 20px;
-    background-color: #C4A484;
+    background-color: #D9A963;
     color: white;
     border: none;
     border-radius: 5px;
@@ -72,7 +74,7 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
-    padding: 0 20px;
+    padding-top: 20px;
 }
 
 .car-card {
@@ -81,8 +83,8 @@ body {
 }
 
 .car-image {
-    width: 250px;
-    height: 180px;
+    width: 594px;
+    height: 316px;
     object-fit: cover;
     border-radius: 8px;
 }
@@ -99,7 +101,7 @@ body {
 }
 
 .car-info {
-    color: #666;
+    color: #796157;
     margin: 2px 0;
 }
 

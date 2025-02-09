@@ -3,13 +3,13 @@
 @{
     ViewData["Title"] = "Create";
 }
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="~/css/Create.css" />
 <div class="container">
     <h1 class="form-title">Ajouter une voiture</h1>
     <p class="form-subtitle">tous les champs sont obligatoires</p>
-
     <form asp-action="Create" method="post" enctype="multipart/form-data">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
         <div class="form-group">
             <label asp-for="SellingPrice" class="control-label">Prix de vente</label>
@@ -49,7 +49,7 @@
 
         <div class="form-group">
             <label asp-for="Finition" class="control-label">Finition</label>
-            <input asp-for="Finition" class="form-control" />
+            <input asp-for="Finition" class="form-control" type="text" />
             <span asp-validation-for="Finition" class="text-danger"></span>
         </div>
 
@@ -61,7 +61,6 @@
                 </label>
                 <input type="file" asp-for="Image" class="form-control" id="Image" accept="image/*" />
             </div>
-            <span asp-validation-for="Image" class="text-danger"></span>
         </div>
 
         <div class="form-group">
@@ -70,6 +69,4 @@
     </form>
 </div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+

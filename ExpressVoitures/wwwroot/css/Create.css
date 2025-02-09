@@ -7,9 +7,11 @@
 
 .form-title {
     text-align: center;
-    color: #333;
+    color: #796157;
     font-size: 2rem;
     margin-bottom: 10px;
+    font-family: 'Libre Baskerville', serif;
+    font-style: italic
 }
 
 .form-subtitle {
@@ -62,7 +64,7 @@ input[type="submit"] {
 }
 
     input[type="submit"]:hover {
-        background-color: #b39476;
+        background-color: #D9A963;
     }
 
 /* Style pour les datalist */

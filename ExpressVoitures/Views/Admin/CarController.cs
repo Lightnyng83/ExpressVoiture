@@ -10,6 +10,7 @@ using ExpressVoitures.Models;
 using ExpressVoitures.Services.Interfaces;
 using ExpressVoitures.ViewModels;
 using System.Runtime.ConstrainedExecution;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace ExpressVoitures.Views.Admin
 {
@@ -22,6 +23,11 @@ namespace ExpressVoitures.Views.Admin
         {
             _carService = carService;
             _hostEnvironment = hostEnvironment;
+        }
+
+        public async Task<IActionResult> Completed()
+        {
+            return View();
         }
 
 
@@ -72,26 +78,73 @@ namespace ExpressVoitures.Views.Admin
             return View(viewModel);
         }
 
+        private async Task<IActionResult> ValidateForm(CarCreateViewModel carViewModel)
+        {
+            
+
+            if (carViewModel.Year < 1990 || carViewModel.Year > (int)DateTime.Now.Year)
+            {
+                ModelState.AddModelError(nameof(carViewModel.Year), $"L'année doit être comprise entre 1990 et {(int)DateTime.Now.Year}");
+            }
+            if (carViewModel.SellingPrice <= 0)
+            {
+                ModelState.AddModelError(nameof(carViewModel.SellingPrice), "Vous devez saisir un prix de vente supérieur à 0");
+            }
+            if (carViewModel.SelectedCarBrandModelId == 0 && carViewModel.Model == null)
+            {
+                ModelState.AddModelError(nameof(carViewModel.Model), "Vous devez saisir ou sélectionner un modèle");
+            }
+            if (carViewModel.SelectedCarBrandId == 0 && carViewModel.Brand == null)
+            {
+                ModelState.AddModelError(nameof(carViewModel.Brand), "Vous devez saisir ou sélectionner une marque");
+            }
+            if (string.IsNullOrEmpty(carViewModel.Finition))
+            {
+                ModelState.Remove(nameof(carViewModel.Finition));
+                ModelState.AddModelError(nameof(carViewModel.Finition), "Vous devez saisir une finition");
+            }
+
+            if (ModelState.ErrorCount > 0)
+            {
+                return View(carViewModel);
+            }
+            return Ok();
+        }
+
 
         // POST: Car/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(CarViewModel carViewModel)
+        public async Task<IActionResult> Create(CarCreateViewModel carViewModel)
         {
+            string uniqueFileName = "";
+
+            if (carViewModel.BrandList == null && carViewModel.ModelList == null)
+            {
+                // Repopuler les listes déroulantes
+                carViewModel.BrandList = (await _carService.GetBrand())
+                    .Select(b => new SelectListItem { Value = b.CarBrandName, Text = b.CarBrandName });
+                carViewModel.ModelList = (await _carService.GetModel())
+                    .Select(m => new SelectListItem { Value = m.CarModelName, Text = m.CarModelName });
+                ModelState.Clear();
+                TryValidateModel(carViewModel);
+            }
+
+            if (carViewModel.Image == null)
+            {
+                carViewModel.Image = new FormFile(Stream.Null, 0, 0, null, null);
+                ModelState.Clear();
+                TryValidateModel(carViewModel);
+            }
+            ValidateForm(carViewModel);
+
             if (ModelState.IsValid)
             {
-                string uniqueFileName = "";
+                uniqueFileName = await SavePicture(carViewModel.Image);
 
-                switch (carViewModel.Image)
-                {
-                    case not null:
-                        uniqueFileName = await SavePicture(carViewModel.Image);
-                        break;
-                    default:
-                        break;
-                }
+                
                 
                 if (carViewModel.Brand != null &&( await _carService.GetBrandByName(carViewModel.Brand) == null))
                 {
@@ -117,10 +170,19 @@ namespace ExpressVoitures.Views.Admin
                     ImageUrl = uniqueFileName, // Par exemple "GUID_NomFichier.ext"
                     Finition = carViewModel.Finition
                 };
-                await _carService.AddCar(newcar);                    
-                
+                await _carService.AddCar(newcar);
+                return RedirectToAction(nameof(Completed));
+
             }
-            return RedirectToAction(nameof(Index));
+           
+                // Repopuler les listes déroulantes
+                carViewModel.BrandList = (await _carService.GetBrand())
+                    .Select(b => new SelectListItem { Value = b.CarBrandName, Text = b.CarBrandName });
+                carViewModel.ModelList = (await _carService.GetModel())
+                    .Select(m => new SelectListItem { Value = m.CarModelName, Text = m.CarModelName });
+
+                return View(carViewModel);
+            
         }
 
         // GET: Car/Edit/5
@@ -242,16 +304,30 @@ namespace ExpressVoitures.Views.Admin
                 await _carService.DeleteCar(id);
             }
 
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Deleted), new { brand = car.CarBrandModel.CarBrand.CarBrandName, model = car.CarBrandModel.CarModel.CarModelName, year = car.Year, finition = car.Finition });
         }
 
+        public async Task<IActionResult> Deleted(string brand, string model,int year, string finition)
+        {
+            var carViewModel = new CarViewModel
+            {
+                Brand = brand,
+                Model = model,
+                Year = year,
+                Finition = finition
+            };
+            return View(carViewModel);
+        }
+
+
+        #region ----- PRIVATE METHODS -----
         private bool CarExists(int id)
         {
             return _carService.GetAllCars().Result.Any(e => e.CarId == id);
         }
         private async Task<string> SavePicture (IFormFile formFile)
         {
-            string uniqueFileName = "";
+            string uniqueFileName = "default.jpg";
 
             if (formFile != null && formFile.Length > 0)
             {
@@ -292,5 +368,6 @@ namespace ExpressVoitures.Views.Admin
                 }
             }
         }
-    } 
+        #endregion
+    }
 }

@@ -1,3 +1,4 @@
+wwwroot\css\Completed.css
 wwwroot\css\Create.css
 wwwroot\css\Detail.css
 wwwroot\css\site.css

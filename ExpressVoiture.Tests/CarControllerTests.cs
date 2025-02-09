@@ -124,7 +124,7 @@ namespace ExpressVoitures.Tests
         {
             // Arrange
             _controller.ModelState.AddModelError("error", "invalid");
-            var carViewModel = new CarViewModel();
+            var carViewModel = new CarCreateViewModel();
             // Act
             var result = await _controller.Create(carViewModel);
             // Ici, votre code redirige vers Index même si le modèle est invalide
@@ -136,7 +136,7 @@ namespace ExpressVoitures.Tests
         public async Task Create_Post_ValidModel_CreatesCarAndRedirects()
         {
             // Arrange
-            var carViewModel = new CarViewModel
+            var carViewModel = new CarCreateViewModel
             {
                 Brand = "Toyota",
                 Model = "Corolla",

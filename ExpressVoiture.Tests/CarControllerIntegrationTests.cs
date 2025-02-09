@@ -187,13 +187,13 @@ namespace ExpressVoitures.IntegrationTests
             _context.CarModels.Add(new CarModel { CarModelId = 1, CarModelName = "Corolla" });
             await _context.SaveChangesAsync();
 
-            var carViewModel = new CarViewModel
+            var carViewModel = new CarCreateViewModel
             {
                 Brand = "Toyota",
                 Model = "Corolla",
                 Year = 2020,
                 SellingPrice = 15000,
-                Image = null,// Pas de fichier image pour ce test.
+                Image = new FormFile(Stream.Null, 0, 0, null, null),// Pas de fichier image pour ce test.
                 Finition = "LX"
             };
 
