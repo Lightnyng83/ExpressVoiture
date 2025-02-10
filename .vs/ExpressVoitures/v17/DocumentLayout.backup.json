@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\Projet 5\\ExpressVoiture\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{4217A46E-2D8A-445E-8890-CA67042DD6CF}|ExpressVoitures\\ExpressVoitures.csproj|c:\\users\\lightnyng83\\desktop\\openclassrooms\\projet 5\\expressvoiture\\expressvoitures\\views\\admin\\carcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4217A46E-2D8A-445E-8890-CA67042DD6CF}|ExpressVoitures\\ExpressVoitures.csproj|solutionrelative:expressvoitures\\views\\admin\\carcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4217A46E-2D8A-445E-8890-CA67042DD6CF}|ExpressVoitures\\ExpressVoitures.csproj|c:\\users\\lightnyng83\\desktop\\openclassrooms\\projet 5\\expressvoiture\\expressvoitures\\repository\\carrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4217A46E-2D8A-445E-8890-CA67042DD6CF}|ExpressVoitures\\ExpressVoitures.csproj|solutionrelative:expressvoitures\\repository\\carrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4217A46E-2D8A-445E-8890-CA67042DD6CF}|ExpressVoitures\\ExpressVoitures.csproj|c:\\users\\lightnyng83\\desktop\\openclassrooms\\projet 5\\expressvoiture\\expressvoitures\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4217A46E-2D8A-445E-8890-CA67042DD6CF}|ExpressVoitures\\ExpressVoitures.csproj|solutionrelative:expressvoitures\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -51,20 +59,12 @@
       "RelativeMoniker": "D:0:0:{4217A46E-2D8A-445E-8890-CA67042DD6CF}|ExpressVoitures\\ExpressVoitures.csproj|solutionrelative:expressvoitures\\views\\car\\completed.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4217A46E-2D8A-445E-8890-CA67042DD6CF}|ExpressVoitures\\ExpressVoitures.csproj|c:\\users\\lightnyng83\\desktop\\openclassrooms\\projet 5\\expressvoiture\\expressvoitures\\views\\admin\\carcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4217A46E-2D8A-445E-8890-CA67042DD6CF}|ExpressVoitures\\ExpressVoitures.csproj|solutionrelative:expressvoitures\\views\\admin\\carcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4217A46E-2D8A-445E-8890-CA67042DD6CF}|ExpressVoitures\\ExpressVoitures.csproj|c:\\users\\lightnyng83\\desktop\\openclassrooms\\projet 5\\expressvoiture\\expressvoitures\\expressvoitures.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{4217A46E-2D8A-445E-8890-CA67042DD6CF}|ExpressVoitures\\ExpressVoitures.csproj|solutionrelative:expressvoitures\\expressvoitures.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{477B6BC0-27E9-4E68-8C3C-D81B17DD1260}|ExpressVoiture.Tests\\ExpressVoiture.Tests.csproj|c:\\users\\lightnyng83\\desktop\\openclassrooms\\projet 5\\expressvoiture\\expressvoiture.tests\\carcontrollerintegrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{477B6BC0-27E9-4E68-8C3C-D81B17DD1260}|ExpressVoiture.Tests\\ExpressVoiture.Tests.csproj|solutionrelative:expressvoiture.tests\\carcontrollerintegrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4217A46E-2D8A-445E-8890-CA67042DD6CF}|ExpressVoitures\\ExpressVoitures.csproj|c:\\users\\lightnyng83\\desktop\\openclassrooms\\projet 5\\expressvoiture\\expressvoitures\\repository\\carrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4217A46E-2D8A-445E-8890-CA67042DD6CF}|ExpressVoitures\\ExpressVoitures.csproj|solutionrelative:expressvoitures\\repository\\carrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4217A46E-2D8A-445E-8890-CA67042DD6CF}|ExpressVoitures\\ExpressVoitures.csproj|c:\\users\\lightnyng83\\desktop\\openclassrooms\\projet 5\\expressvoiture\\expressvoitures\\models\\car.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -102,7 +102,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 394,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 16,
           "Children": [
             {
               "$type": "Bookmark",
@@ -130,45 +130,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\Projet 5\\ExpressVoiture\\ExpressVoitures\\Data\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "ExpressVoitures\\Data\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\Projet 5\\ExpressVoiture\\ExpressVoitures\\Data\\ApplicationDbContext.cs",
-              "RelativeToolTip": "ExpressVoitures\\Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAmwEEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T11:30:18.884Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "_LoginPartial.cshtml",
-              "DocumentMoniker": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\Projet 5\\ExpressVoiture\\ExpressVoitures\\Views\\Shared\\_LoginPartial.cshtml",
-              "RelativeDocumentMoniker": "ExpressVoitures\\Views\\Shared\\_LoginPartial.cshtml",
-              "ToolTip": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\Projet 5\\ExpressVoiture\\ExpressVoitures\\Views\\Shared\\_LoginPartial.cshtml",
-              "RelativeToolTip": "ExpressVoitures\\Views\\Shared\\_LoginPartial.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-09T17:45:38.191Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\Projet 5\\ExpressVoiture\\ExpressVoitures\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "ExpressVoitures\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\Projet 5\\ExpressVoiture\\ExpressVoitures\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "ExpressVoitures\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-09T17:45:36.852Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Privacy.cshtml",
               "DocumentMoniker": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\Projet 5\\ExpressVoiture\\ExpressVoitures\\Views\\Home\\Privacy.cshtml",
               "RelativeDocumentMoniker": "ExpressVoitures\\Views\\Home\\Privacy.cshtml",
@@ -180,7 +142,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\Projet 5\\ExpressVoiture\\ExpressVoitures\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "ExpressVoitures\\Views\\Home\\Index.cshtml",
@@ -192,7 +154,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\Projet 5\\ExpressVoiture\\ExpressVoitures\\Views\\Car\\Index.cshtml",
               "RelativeDocumentMoniker": "ExpressVoitures\\Views\\Car\\Index.cshtml",
@@ -204,7 +166,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\Projet 5\\ExpressVoiture\\ExpressVoitures\\Views\\Car\\Details.cshtml",
               "RelativeDocumentMoniker": "ExpressVoitures\\Views\\Car\\Details.cshtml",
@@ -216,7 +178,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "Deleted.cshtml",
               "DocumentMoniker": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\Projet 5\\ExpressVoiture\\ExpressVoitures\\Views\\Car\\Deleted.cshtml",
               "RelativeDocumentMoniker": "ExpressVoitures\\Views\\Car\\Deleted.cshtml",
@@ -228,7 +190,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "Completed.cshtml",
               "DocumentMoniker": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\Projet 5\\ExpressVoiture\\ExpressVoitures\\Views\\Car\\Completed.cshtml",
               "RelativeDocumentMoniker": "ExpressVoitures\\Views\\Car\\Completed.cshtml",
@@ -252,7 +214,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "CarControllerIntegrationTests.cs",
               "DocumentMoniker": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\Projet 5\\ExpressVoiture\\ExpressVoiture.Tests\\CarControllerIntegrationTests.cs",
               "RelativeDocumentMoniker": "ExpressVoiture.Tests\\CarControllerIntegrationTests.cs",
@@ -288,6 +250,67 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CarController.cs",
+              "DocumentMoniker": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\Projet 5\\ExpressVoiture\\ExpressVoitures\\Views\\Admin\\CarController.cs",
+              "RelativeDocumentMoniker": "ExpressVoitures\\Views\\Admin\\CarController.cs",
+              "ToolTip": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\Projet 5\\ExpressVoiture\\ExpressVoitures\\Views\\Admin\\CarController.cs",
+              "RelativeToolTip": "ExpressVoitures\\Views\\Admin\\CarController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADgAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-09T15:22:17.199Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CarRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\Projet 5\\ExpressVoiture\\ExpressVoitures\\Repository\\CarRepository.cs",
+              "RelativeDocumentMoniker": "ExpressVoitures\\Repository\\CarRepository.cs",
+              "ToolTip": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\Projet 5\\ExpressVoiture\\ExpressVoitures\\Repository\\CarRepository.cs",
+              "RelativeToolTip": "ExpressVoitures\\Repository\\CarRepository.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAArwCsAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-09T17:38:35.997Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\Projet 5\\ExpressVoiture\\ExpressVoitures\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "ExpressVoitures\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\Projet 5\\ExpressVoiture\\ExpressVoitures\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "ExpressVoitures\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA4wBsAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-10T11:30:18.884Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\Projet 5\\ExpressVoiture\\ExpressVoitures\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "ExpressVoitures\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\Projet 5\\ExpressVoiture\\ExpressVoitures\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "ExpressVoitures\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-09T17:45:36.852Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_LoginPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\Projet 5\\ExpressVoiture\\ExpressVoitures\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeDocumentMoniker": "ExpressVoitures\\Views\\Shared\\_LoginPartial.cshtml",
+              "ToolTip": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\Projet 5\\ExpressVoiture\\ExpressVoitures\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeToolTip": "ExpressVoitures\\Views\\Shared\\_LoginPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-09T17:45:38.191Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 19,
               "Title": "CarEditionViewModel.cs",
               "DocumentMoniker": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\Projet 5\\ExpressVoiture\\ExpressVoitures\\ViewModels\\CarEditionViewModel.cs",
@@ -300,7 +323,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\Projet 5\\ExpressVoiture\\ExpressVoitures\\Views\\Car\\Edit.cshtml",
               "RelativeDocumentMoniker": "ExpressVoitures\\Views\\Car\\Edit.cshtml",
@@ -348,7 +371,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\Projet 5\\ExpressVoiture\\ExpressVoitures\\Views\\Car\\Create.cshtml",
               "RelativeDocumentMoniker": "ExpressVoitures\\Views\\Car\\Create.cshtml",
@@ -360,7 +383,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\Projet 5\\ExpressVoiture\\ExpressVoitures\\Views\\Car\\Delete.cshtml",
               "RelativeDocumentMoniker": "ExpressVoitures\\Views\\Car\\Delete.cshtml",
@@ -372,31 +395,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "CarRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\Projet 5\\ExpressVoiture\\ExpressVoitures\\Repository\\CarRepository.cs",
-              "RelativeDocumentMoniker": "ExpressVoitures\\Repository\\CarRepository.cs",
-              "ToolTip": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\Projet 5\\ExpressVoiture\\ExpressVoitures\\Repository\\CarRepository.cs",
-              "RelativeToolTip": "ExpressVoitures\\Repository\\CarRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-09T17:38:35.997Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "CarController.cs",
-              "DocumentMoniker": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\Projet 5\\ExpressVoiture\\ExpressVoitures\\Views\\Admin\\CarController.cs",
-              "RelativeDocumentMoniker": "ExpressVoitures\\Views\\Admin\\CarController.cs",
-              "ToolTip": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\Projet 5\\ExpressVoiture\\ExpressVoitures\\Views\\Admin\\CarController.cs",
-              "RelativeToolTip": "ExpressVoitures\\Views\\Admin\\CarController.cs",
-              "ViewState": "AgIAABsBAAAAAAAAAAApwFMBAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-09T15:22:17.199Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "ExpressVoitures.csproj",
               "DocumentMoniker": "C:\\Users\\Lightnyng83\\Desktop\\OpenClassrooms\\Projet 5\\ExpressVoiture\\ExpressVoitures\\ExpressVoitures.csproj",
               "RelativeDocumentMoniker": "ExpressVoitures\\ExpressVoitures.csproj",

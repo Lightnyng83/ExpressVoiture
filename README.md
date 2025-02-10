@@ -151,6 +151,12 @@ namespace ExpressVoitures.Data
 2. **Gestion des utilisateurs :**
    - Grâce à ASP.NET Core Identity, la gestion des comptes utilisateurs et des rôles est intégrée à l'application.
 
+3. **Utilisation des formulaires :**
+   - Dans les formulaires de creation et d'édition de véhicules, en double-cliquant sur le champ de saisie Marques et Modèle, vous pouvez afficher une liste des marques et modèle déjà présente en base de données.
+
+2. **Creation de nouvelles marques et de nouveau modèle:**
+   - Si dans les champs de saisie Marques et Modèle, vous saisissez un nom qui n'existe pas, la marque ou le modèle seront crée en base de données, puis ajouté à la table de liaison. 
+
 ## Tests
 
 L'application inclut des tests unitaires et des tests d'intégration pour valider le comportement des contrôleurs et la persistance des données.
