@@ -3,6 +3,7 @@ wwwroot\css\Create.css
 wwwroot\css\Detail.css
 wwwroot\css\site.css
 wwwroot\favicon.ico
+wwwroot\images\8577fe0b-3996-4e31-bb67-2ba23585dc3a_0_0.png
 wwwroot\images\default.jpg
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css

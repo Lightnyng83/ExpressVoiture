@@ -2715,6 +2715,88 @@
       ]
     },
     {
+      "Route": "images/8577fe0b-3996-4e31-bb67-2ba23585dc3a_0_0.png",
+      "AssetFile": "images/8577fe0b-3996-4e31-bb67-2ba23585dc3a_0_0.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6041466"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"R1apgtCCXYA1IBzloOgVNIKzP5GMo1ui06xX17WY+M0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 09 Feb 2025 17:44:37 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-R1apgtCCXYA1IBzloOgVNIKzP5GMo1ui06xX17WY+M0="
+        }
+      ]
+    },
+    {
+      "Route": "images/8577fe0b-3996-4e31-bb67-2ba23585dc3a_0_0.r3w70uc3pj.png",
+      "AssetFile": "images/8577fe0b-3996-4e31-bb67-2ba23585dc3a_0_0.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6041466"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"R1apgtCCXYA1IBzloOgVNIKzP5GMo1ui06xX17WY+M0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 09 Feb 2025 17:44:37 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "r3w70uc3pj"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-R1apgtCCXYA1IBzloOgVNIKzP5GMo1ui06xX17WY+M0="
+        },
+        {
+          "Name": "label",
+          "Value": "images/8577fe0b-3996-4e31-bb67-2ba23585dc3a_0_0.png"
+        }
+      ]
+    },
+    {
       "Route": "images/default.jpg",
       "AssetFile": "images/default.jpg",
       "Selectors": [],

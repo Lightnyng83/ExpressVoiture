@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ExpressVoitures")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3ad8f8149ae934a199bdc81351dfdcc045920ed7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9be671690c009441b99d009649472f24372e5c07")]
 [assembly: System.Reflection.AssemblyProductAttribute("ExpressVoitures")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ExpressVoitures")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
