@@ -1382,3 +1382,6 @@ C:\Users\Lightnyng83\Desktop\OpenClassrooms\Projet 5\ExpressVoiture\ExpressVoitu
 C:\Users\Lightnyng83\Desktop\OpenClassrooms\Projet 5\ExpressVoiture\ExpressVoiture.Tests\obj\Debug\net8.0\ExpressVoiture.Tests.pdb
 C:\Users\Lightnyng83\Desktop\OpenClassrooms\Projet 5\ExpressVoiture\ExpressVoiture.Tests\obj\Debug\net8.0\ExpressVoiture.Tests.genruntimeconfig.cache
 C:\Users\Lightnyng83\Desktop\OpenClassrooms\Projet 5\ExpressVoiture\ExpressVoiture.Tests\obj\Debug\net8.0\ref\ExpressVoiture.Tests.dll
+C:\Users\Lightnyng83\Desktop\OpenClassrooms\Projet 5\ExpressVoiture\ExpressVoiture.Tests\bin\Debug\net8.0\FluentValidation.dll
+C:\Users\Lightnyng83\Desktop\OpenClassrooms\Projet 5\ExpressVoiture\ExpressVoiture.Tests\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
+C:\Users\Lightnyng83\Desktop\OpenClassrooms\Projet 5\ExpressVoiture\ExpressVoiture.Tests\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll

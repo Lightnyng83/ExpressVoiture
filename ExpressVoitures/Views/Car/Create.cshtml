@@ -22,8 +22,30 @@
             <input asp-for="Year" class="form-control" type="number" />
             <span asp-validation-for="Year" class="text-danger"></span>
         </div>
-
         <div class="form-group">
+            <label for="Brand" class="control-label">Marque</label>
+            <select class="form-control" id="Brand" name="Brand">
+                @foreach (var brand in Model.BrandList)
+                {
+                    <option value="@brand.Value">@brand.Text</option>
+
+                }
+            </select>
+            <span asp-validation-for="Model" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label for="ModelSelect" class="control-label">Marque</label>
+            <select class="form-control" id="ModelSelect" name="Model">
+                @foreach (var modele in Model.ModelList!)
+                {
+                    <option value="@modele.Value">@modele.Text</option>
+
+                }
+            </select>
+            <span asp-validation-for="Model" class="text-danger"></span>
+        </div>
+
+        @*  <div class="form-group">
             <label for="Brand" class="control-label">Marque</label>
             <input type="text" class="form-control" id="Brand" name="Brand" list="brandList" value="@Model.Brand" />
             <datalist id="brandList">
@@ -33,19 +55,11 @@
                 }
             </datalist>
             <span asp-validation-for="Brand" class="text-danger"></span>
-        </div>
+        </div> *@
 
-        <div class="form-group">
-            <label for="Model" class="control-label">Modèle</label>
-            <input type="text" class="form-control" id="Model" name="Model" list="modelList" value="@Model.Model" />
-            <datalist id="modelList">
-                @foreach (var modele in Model.ModelList!)
-                {
-                    <option value="@modele.Value"></option>
-                }
-            </datalist>
-            <span asp-validation-for="Model" class="text-danger"></span>
-        </div>
+        
+
+        
 
         <div class="form-group">
             <label asp-for="Finition" class="control-label">Finition</label>

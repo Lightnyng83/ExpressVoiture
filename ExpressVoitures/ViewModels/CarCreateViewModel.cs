@@ -5,40 +5,40 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ExpressVoitures.ViewModels
 {
-    public class CarCreateViewModel : IValidatableObject
+    public class CarCreateViewModel : ICarViewModel
     {
-        [Required]
-        public int SelectedCarBrandId { get; set; }
+        //[Required]
+        //public int SelectedCarBrandId { get; set; }
 
-        [Required]
-        public int SelectedCarBrandModelId { get; set; }
+        //[Required]
+        //public int SelectedCarBrandModelId { get; set; }
 
-        [Required]
-        public int Year { get; set; }
+        //[Required]
+        //public int Year { get; set; }
 
-        [Required]
-        public int SellingPrice { get; set; }
-        [Required]
+        //[Required]
+        //public int SellingPrice { get; set; }
+
         public string? Finition { get; set; }
-        public IFormFile? Image { get; set; }
-        public string? Brand { get; set; }
-        public string? Model { get; set; }
+
+        //public IFormFile? Image { get; set; }
+        //public string? Brand { get; set; }
+        //public string? Model { get; set; }
 
         public IEnumerable<SelectListItem>? BrandList { get; set; }
         public IEnumerable<SelectListItem>? ModelList { get; set; }
 
-        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
-        {
-            int currentYear = DateTime.Now.Year;
-            if (Year < 1990 || Year > currentYear)
-            {
-                yield return new ValidationResult($"L'année doit être comprise entre 1990 et {currentYear}.", new[] { nameof(Year) });
-            }
+        public string? Brand { get; set; }
+        public string? Model { get; set; }
+        public int Year { get; set; }
+        public int SellingPrice { get; set; }
+        public IFormFile? Image { get; set; }
 
-            if (SellingPrice <= 0)
-            {
-                yield return new ValidationResult("Le prix de vente doit être supérieur à 0.", new[] { nameof(SellingPrice) });
-            }
-        }
+        // Liste de marques pour alimenter le datalist (si nécessaire)
+        //public IEnumerable<SelectListItem> BrandList { get; set; } = Enumerable.Empty<SelectListItem>();
+
+        // Groupe de modèles : la clé correspond à la marque, la valeur est la liste des modèles pour cette marque
+        public Dictionary<string, IEnumerable<SelectListItem>> GroupedModelList { get; set; } = new Dictionary<string, IEnumerable<SelectListItem>>();
     }
+
 }

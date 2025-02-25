@@ -18,6 +18,7 @@ using Microsoft.EntityFrameworkCore;
 using Xunit;
 using ExpressVoiture.Tests.Config;
 using Microsoft.AspNetCore.Http;
+using Moq;
 
 namespace ExpressVoitures.IntegrationTests
 {
@@ -30,29 +31,32 @@ namespace ExpressVoitures.IntegrationTests
 
         public CarControllerIntegrationTests()
         {
-            // Configurez le DbContext en mémoire
+            // 1. Définir et créer le dossier temporaire pour WebRootPath
+            _tempImagesFolder = Path.Combine(Path.GetTempPath(), "ExpressVoituresTestImages");
+            if (!Directory.Exists(_tempImagesFolder))
+            {
+                Directory.CreateDirectory(_tempImagesFolder);
+            }
+
+            // 2. Créer et configurer le mock de IWebHostEnvironment
+            var hostEnvMock = new Moq.Mock<IWebHostEnvironment>();
+            hostEnvMock.Setup(h => h.WebRootPath).Returns(_tempImagesFolder);
+
+            // 3. Configurer le DbContext en mémoire
             var options = new DbContextOptionsBuilder<ApplicationDbContext>()
                 .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
                 .Options;
             _context = new TestApplicationDbContext(options);
             _context.Database.EnsureCreated();
 
-            // On instancie le repository et le service réels.
+            // 4. Instancier le repository et le service réels
             ICarRepository repository = new CarRepository(_context);
-            _carService = new CarService(repository);
+            _carService = new CarService(repository, hostEnvMock.Object);
 
-            // Utilisation d'un dossier temporaire pour simuler WebRootPath
-            _tempImagesFolder = Path.Combine(Path.GetTempPath(), "ExpressVoituresTestImages");
-            if (!Directory.Exists(_tempImagesFolder))
-            {
-                Directory.CreateDirectory(_tempImagesFolder);
-            }
-            // Créez une implémentation simulée de IWebHostEnvironment
-            var hostEnvMock = new Moq.Mock<IWebHostEnvironment>();
-            hostEnvMock.Setup(h => h.WebRootPath).Returns(_tempImagesFolder);
-
+            // 5. Instancier le contrôleur avec le service et le même IWebHostEnvironment
             _controller = new CarController(_carService, hostEnvMock.Object);
         }
+
 
         #region Méthode utilitaire pour insérer des entités valides
 
@@ -161,10 +165,11 @@ namespace ExpressVoitures.IntegrationTests
 
         #region Create
 
+
         [Fact]
         public async Task Create_Get_ReturnsViewWithCarCreateViewModel()
         {
-            // Arrange : Insérer quelques marques et modèles dans le contexte
+            // Arrange : Insérer une marque et modèle dans le contexte
             _context.CarBrands.Add(new CarBrand { CarBrandId = 1, CarBrandName = "Toyota" });
             _context.CarModels.Add(new CarModel { CarModelId = 1, CarModelName = "Corolla" });
             await _context.SaveChangesAsync();
@@ -307,9 +312,10 @@ namespace ExpressVoitures.IntegrationTests
         }
 
         [Fact]
-        public async Task Delete_Post_ValidId_RedirectsToIndex_AndDeletesCar()
+        public async Task Delete_Post_ValidId_RedirectsToDeleted_AndDeletesCar()
         {
-            // Arrange : insérer un véhicule valide
+            // Arrange : insérer un véhicule valide en base
+            // On s'assure d'insérer également les entités liées (CarBrand, CarModel, CarBrandModel)
             await InsertValidCar(1, 2020, 15000, "default.jpg");
 
             // Act
@@ -317,10 +323,21 @@ namespace ExpressVoitures.IntegrationTests
 
             // Assert
             var redirectResult = Assert.IsType<RedirectToActionResult>(result);
+            // Vérifier que l'action de redirection est "Deleted"
             Assert.Equal("Deleted", redirectResult.ActionName);
+
+            // Optionnel : vérifier que des valeurs de route sont fournies (exemple : brand, model, etc.)
+            Assert.NotNull(redirectResult.RouteValues);
+            Assert.True(redirectResult.RouteValues.ContainsKey("brand"));
+            Assert.True(redirectResult.RouteValues.ContainsKey("model"));
+            Assert.True(redirectResult.RouteValues.ContainsKey("year"));
+            Assert.True(redirectResult.RouteValues.ContainsKey("finition"));
+
+            // Vérifier que le véhicule a bien été supprimé de la base
             var carInDb = await _context.Cars.FindAsync(1);
             Assert.Null(carInDb);
         }
+
 
         #endregion
 

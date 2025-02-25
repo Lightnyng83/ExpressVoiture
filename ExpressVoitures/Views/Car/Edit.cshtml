@@ -14,6 +14,7 @@
     <h1 class="form-title">Mise à jour du véhicule</h1>
 
     <form asp-action="Edit" method="post" enctype="multipart/form-data">
+        <input type="hidden" asp-for="CarId" />
 
         <div class="form-group">
             <label asp-for="SellingPrice" class="control-label">Prix de vente</label>
@@ -29,25 +30,24 @@
 
         <div class="form-group">
             <label for="Brand" class="control-label">Marque</label>
-            <input type="text" class="form-control" id="Brand" name="Brand" list="brandList" value="@Model.Brand" />
-            <datalist id="brandList">
-                @foreach (var brand in Model.BrandList!)
+            <select class="form-control" id="Brand" name="Brand">
+                @foreach (var brand in Model.BrandList)
                 {
-                    <option value="@brand.Value"></option>
-                }
-            </datalist>
-            <span asp-validation-for="Brand" class="text-danger"></span>
-        </div>
+                    <option value="@brand.Value">@brand.Text</option>
 
+                }
+            </select>
+            <span asp-validation-for="Model" class="text-danger"></span>
+        </div>
         <div class="form-group">
-            <label for="Model" class="control-label">Modèle</label>
-            <input type="text" class="form-control" id="Model" name="Model" list="modelList" value="@Model.Model" />
-            <datalist id="modelList">
+            <label for="ModelSelect" class="control-label">Modèle</label>
+            <select class="form-control" id="ModelSelect" name="Model">
                 @foreach (var modele in Model.ModelList!)
                 {
-                    <option value="@modele.Value"></option>
+                    <option value="@modele.Value">@modele.Text</option>
+
                 }
-            </datalist>
+            </select>
             <span asp-validation-for="Model" class="text-danger"></span>
         </div>
 

@@ -1,15 +1,16 @@
 ﻿using ExpressVoitures.Models;
 using ExpressVoitures.ViewModels;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ExpressVoitures.Services.Interfaces
 {
     public interface ICarService
     {
-        Task AddCar(Car car);
+        Task AddCar(CarCreateViewModel carViewModel);
         Task DeleteCar(int carId);
         Task<List<Car>> GetAllCars();
         Task<Car?> GetCarById(int? carId);
-        Task UpdateCar(Car car);
+        Task<IActionResult> UpdateCar(CarEditionViewModel car, int id);
         Task<CarBrandModel?> GetBrandModelId(int brandId, int modelId);
         Task<CarBrand?> GetBrandByName(string brandName);
         Task<CarModel?> GetModelByName(string modelName);

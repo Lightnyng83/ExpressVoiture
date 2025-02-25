@@ -3,6 +3,7 @@ using ExpressVoitures.Repository;
 using ExpressVoitures.Repository.Interfaces;
 using ExpressVoitures.Services;
 using ExpressVoitures.Services.Interfaces;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -20,7 +21,15 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options =>
 })
 .AddRoles<IdentityRole>()
 .AddEntityFrameworkStores<ApplicationDbContext>();
-builder.Services.AddControllersWithViews();
+#pragma warning disable CS0618 // Le type ou le membre est obsolète
+builder.Services.AddControllersWithViews()
+    .AddFluentValidation(fv =>
+    {
+        fv.DisableDataAnnotationsValidation = true;
+        fv.RegisterValidatorsFromAssemblyContaining<CarCreateViewModelValidator>();
+    });
+#pragma warning restore CS0618 // Le type ou le membre est obsolète
+
 
 builder.Services.AddScoped<ICarRepository, CarRepository>();
 builder.Services.AddScoped<ICarService, CarService>();
