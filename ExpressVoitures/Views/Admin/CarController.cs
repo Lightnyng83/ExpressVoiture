@@ -11,6 +11,7 @@ using ExpressVoitures.Services.Interfaces;
 using ExpressVoitures.ViewModels;
 using System.Runtime.ConstrainedExecution;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ExpressVoitures.Views.Admin
 {
@@ -57,7 +58,7 @@ namespace ExpressVoitures.Views.Admin
         #region ----- Create -----
 
         #region ----- Version 1 -----
-
+        [Authorize]
         public async Task<IActionResult> Create()
         {
             // Récupérer la liste des marques et la liste des associations (table de jonction)
@@ -119,6 +120,7 @@ namespace ExpressVoitures.Views.Admin
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> Create(CarCreateViewModel carViewModel)
         {
             if (ModelState.IsValid)
@@ -157,6 +159,7 @@ namespace ExpressVoitures.Views.Admin
         #region ----- Edit ----- 
 
         // GET: Car/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int id)
         {
             var car = await _carService.GetCarById(id);
@@ -194,6 +197,7 @@ namespace ExpressVoitures.Views.Admin
         //For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> Edit([FromForm] CarEditionViewModel carViewModel, int id)
         {
             if (ModelState.IsValid)
@@ -217,6 +221,7 @@ namespace ExpressVoitures.Views.Admin
         #region ----- Delete -----
 
         // GET: Car/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -236,6 +241,7 @@ namespace ExpressVoitures.Views.Admin
         // POST: Car/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var car = await _carService.GetCarById(id);
@@ -265,7 +271,7 @@ namespace ExpressVoitures.Views.Admin
 
 
         /// <summary>
-        /// Permet de valider les données du formulaire (Remplacer par FluentApi
+        /// Permet de valider les données du formulaire (Remplacer par FluentApi)
         /// </summary>
         /// <param name="carViewModel">objet dynamique pour s'adapter a un Create ou un Edit</param>
         /// <returns></returns>

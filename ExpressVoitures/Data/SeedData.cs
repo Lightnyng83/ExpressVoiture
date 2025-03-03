@@ -6,9 +6,8 @@ namespace ExpressVoitures.Data
 {
     public class SeedData
     {
-        private static readonly IPasswordHasher<IdentityUser> _passwordHasher = new PasswordHasher<IdentityUser>();
-        private static readonly string adminEmail = "admin@example.com";
-        private static readonly string adminPassword = "Admin@123";
+        private static readonly string adminEmail = "admin@example.com"; //Identifiant de connexion de l'administrateur
+        private static readonly string adminPassword = "Admin@123"; //Mot de passe de l'administrateur
         public static async void Initialize(IServiceProvider serviceProvider)
         {
             #region ----- INITIALIZATION -----
@@ -79,15 +78,15 @@ namespace ExpressVoitures.Data
 
             // Liste des voitures issues du fichier Excel
             var cars = new List<(string brand, string model, int year, int price,string finition)>
-    {
-        ("Mazda", "Miata", 2019, 9900,"LE"),
-        ("Jeep", "Liberty", 2007, 5350,"Sport"),
-        ("Renault", "Scénic", 2007, 2990,"TCe"),
-        ("Ford", "Explorer", 2017, 25950,"XLT"),
-        ("Honda", "Civic", 2008, 4975,"LX"),
-        ("Volkswagen", "GTI", 2016, 16190, "S"),
-        ("Ford", "Edge", 2013, 12440, "SEL")
-    };
+            {
+                ("Mazda", "Miata", 2019, 9900,"LE"),
+                ("Jeep", "Liberty", 2007, 5350,"Sport"),
+                ("Renault", "Scénic", 2007, 2990,"TCe"),
+                ("Ford", "Explorer", 2017, 25950,"XLT"),
+                ("Honda", "Civic", 2008, 4975,"LX"),
+                ("Volkswagen", "GTI", 2016, 16190, "S"),
+                ("Ford", "Edge", 2013, 12440, "SEL")
+            };
 
             foreach (var (brand, model, year, price, finition) in cars)
             {

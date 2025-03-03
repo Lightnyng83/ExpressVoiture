@@ -32,7 +32,7 @@ L'application intègre ASP.NET Core Identity pour la gestion sécurisée des uti
 
 1. **Cloner le dépôt :**
    ```bash
-   git clone https://github.com/votre-utilisateur/ExpressVoitures.git
+   git clone https://github.com/Lightnyng83/ExpressVoitures.git
    cd ExpressVoitures
    ```
 
