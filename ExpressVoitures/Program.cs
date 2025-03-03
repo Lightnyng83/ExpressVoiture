@@ -33,7 +33,11 @@ builder.Services.AddControllersWithViews()
 
 builder.Services.AddScoped<ICarRepository, CarRepository>();
 builder.Services.AddScoped<ICarService, CarService>();
-
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("ADMIN", policy =>
+        policy.RequireRole("ADMIN"));
+});
 builder.Logging.ClearProviders();
 builder.Logging.AddConsole();
 

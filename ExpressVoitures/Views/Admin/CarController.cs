@@ -58,7 +58,7 @@ namespace ExpressVoitures.Views.Admin
         #region ----- Create -----
 
         #region ----- Version 1 -----
-        [Authorize]
+        [Authorize("ADMIN")]
         public async Task<IActionResult> Create()
         {
             // Récupérer la liste des marques et la liste des associations (table de jonction)
@@ -120,7 +120,7 @@ namespace ExpressVoitures.Views.Admin
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize]
+        [Authorize("ADMIN")]
         public async Task<IActionResult> Create(CarCreateViewModel carViewModel)
         {
             if (ModelState.IsValid)
@@ -159,7 +159,7 @@ namespace ExpressVoitures.Views.Admin
         #region ----- Edit ----- 
 
         // GET: Car/Edit/5
-        [Authorize]
+        [Authorize("ADMIN")]
         public async Task<IActionResult> Edit(int id)
         {
             var car = await _carService.GetCarById(id);
@@ -197,7 +197,7 @@ namespace ExpressVoitures.Views.Admin
         //For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize]
+        [Authorize("ADMIN")]
         public async Task<IActionResult> Edit([FromForm] CarEditionViewModel carViewModel, int id)
         {
             if (ModelState.IsValid)
@@ -221,7 +221,7 @@ namespace ExpressVoitures.Views.Admin
         #region ----- Delete -----
 
         // GET: Car/Delete/5
-        [Authorize]
+        [Authorize("ADMIN")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -241,7 +241,7 @@ namespace ExpressVoitures.Views.Admin
         // POST: Car/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        [Authorize]
+        [Authorize("ADMIN")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var car = await _carService.GetCarById(id);
